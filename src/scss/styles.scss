@@ -16,10 +16,17 @@ html, body {
 
 body {
  	display: flex;
-  	flex-direction: column;
+  flex-direction: column;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	line-height: 18px;
 	margin: 0;
 	padding: 0;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 36px;
 }
 
 main {
@@ -38,6 +45,37 @@ footer {
 		margin-bottom: 0;
 		vertical-align: top;
 		width: auto;
+	}
+}
+
+.story-container {
+	margin: 0 auto;
+	.pin-item {
+		height: 100vh;
+		margin: 0;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		img {
+			display: block;
+	    height: 100% !important;
+	    left: 50%;
+	    object-fit: cover;
+	    position: absolute;
+	    top: 50%;
+	    transform: translate3d(-50%, -50%, 0);
+	    transition: opacity 1s ease;
+    	width: 100%;
+		}
+	}
+}
+.section {
+	color: #FFF;
+	height: 100vh;
+	position: relative;
+	z-index: 2;
+	&.intro {
+		text-align: center;
 	}
 }
 
