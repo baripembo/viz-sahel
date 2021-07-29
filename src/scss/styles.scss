@@ -25,18 +25,61 @@ body {
 }
 
 h1 {
-	font-size: 32px;
-	line-height: 36px;
+	font-family: 'Source Serif Pro', serif;
+	font-size: 54px;
+	line-height: 70px;
 }
 
 main {
 	flex: 1;
 }
 
+nav {
+	display: none;
+  left: 50%;
+	position: fixed;
+  margin: 0 auto;
+  text-align: center;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 4;
+	ul {
+		list-style-type: none;
+		display: inline-flex;
+		flex-flow: row;
+		padding: 0;
+		li {
+			padding: 0 8px;
+		}
+		img {
+			height: 50px;
+			width: 50px;
+		}
+	}
+}
+
 footer {
 	background-color: #353535;
 	color: #FFF;
 	padding: 20px 0 10px;
+	z-index: 5;
+}
+
+.nav-dataviz,
+.nav-main {
+  color: #FFF;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+	position: fixed;
+  right: 20px;
+  top: 50%;
+  z-index: 5;
+}
+
+.nav-main {
+	left: 20px;
+	right: auto;
 }
 
 .logos {
@@ -53,30 +96,95 @@ footer {
 	.pin-item {
 		height: 100vh;
 		margin: 0;
-		position: -webkit-sticky;
-		position: sticky;
+		position: fixed;
 		top: 0;
-		img {
-			display: block;
-	    height: 100% !important;
-	    left: 50%;
-	    object-fit: cover;
-	    position: absolute;
-	    top: 50%;
-	    transform: translate3d(-50%, -50%, 0);
-	    transition: opacity 1s ease;
-    	width: 100%;
+		width: 100%;
+		.item {
+	  	transition: opacity 1s ease;
+	  	&.item-1 {
+	  		margin-top: -200px;
+	  	}
+	  	&.item-2 {
+	  		div {
+	  		background-color: #FCD09A;
+	  		}
+	  	}
+	  	&.item-8 {
+	  		div {
+	  			background-color: #EFE4CE;
+	  		}
+	  	}  	
+			img,
+			div {
+				display: block;
+		    height: 100%;
+		    left: 50%;
+		    object-fit: cover;
+		    position: absolute;
+		    top: 50%;
+		    transform: translate3d(-50%, -50%, 0);
+	    	width: 100%;
+			}
 		}
 	}
 }
 .section {
 	color: #FFF;
-	height: 100vh;
+	height: 125vh;
 	position: relative;
 	z-index: 2;
-	&.intro {
-		text-align: center;
+	&[data-section="1"] {
+		height: 150vh;
 	}
+	.box {
+		background-color: rgba(255, 255, 255, 0.75);
+		color: #000;
+		font-size: 14px;
+		line-height: 20px;
+		margin: 0 auto;
+		padding: 10px;
+		width: 45%;
+	}	
+	.intro {
+		color: #FFF;
+		height: auto;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		top: 25%;
+		transform: translate(-50%, -25%);
+  	width: 100%;
+		p {
+			font-size: 18px;
+			line-height: 25px;
+			margin: 0 auto;
+			width: 446px;
+		}
+	}
+}
+.dial {
+	bottom: -620px;
+	left: 50%;
+	opacity: 0;
+	position: fixed;
+	transform-origin: 0% 50%;
+	transform: rotate(0deg) translateX(-50%);
+	width: 50%;
+	z-index: 3;
+	transition: transform 0.7s ease-in-out;
+	img {
+		width: 100%;
+	}
+}
+
+.dataviz-container {
+	background-color: #007CE1;
+	height: 100vh;
+	position: fixed;
+	left: 100vw;
+	top: 0;
+	width: 100vw;
+	z-index: 6;
 }
 
 
