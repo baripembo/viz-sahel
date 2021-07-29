@@ -49,7 +49,7 @@ $( document ).ready(function() {
       })
       .on('leave', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
-        currentSection = id;
+        currentSection = id-1;
         toggleSection(id-1, 1);
         rotateDial(id-1);
       })
@@ -68,9 +68,7 @@ $( document ).ready(function() {
         $('.dial').delay(500).animate({
           bottom: -400,
           opacity: 1
-        }, 1000, 'easeInOutQuart', function() {
-          // Animation complete.
-        });
+        }, 1000, 'easeInOutQuart');
 
         $('nav, .nav-dataviz').hide();
       }
