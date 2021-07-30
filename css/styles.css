@@ -1120,10 +1120,10 @@ nav {
     flex-flow: row;
     padding: 0; }
     nav ul li {
-      padding: 0 8px; }
+      padding: 0 12px; }
     nav ul img {
-      height: 50px;
-      width: 50px; }
+      height: 65px;
+      width: 65px; }
 
 footer {
   background-color: #353535;
@@ -1189,10 +1189,12 @@ footer {
   .section .box {
     background-color: rgba(255, 255, 255, 0.75);
     color: #000;
-    font-size: 14px;
-    line-height: 20px;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 18px;
+    line-height: 24px;
     margin: 0 auto;
-    padding: 10px;
+    max-width: 660px;
+    padding: 20px;
     width: 45%; }
   .section .intro {
     color: #FFF;

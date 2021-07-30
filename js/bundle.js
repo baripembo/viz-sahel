@@ -1723,19 +1723,14 @@ $( document ).ready(function() {
     if (step>=2) {
       if (step==2) {
         $('.dial').delay(500).animate({
-          bottom: -400,
+          bottom: -590,
           opacity: 1
         }, 1000, 'easeInOutQuart');
 
         $('nav, .nav-dataviz').hide();
       }
       else if (step==3) {
-        $('.dial').animate({
-          bottom: -590,
-        }, 1000, 'easeInOutQuart', function() {
-          $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
-        });
-
+        $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
         $('nav, .nav-dataviz').show();
       }
       else {
