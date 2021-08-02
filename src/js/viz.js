@@ -45,13 +45,13 @@ $( document ).ready(function() {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id;
         toggleSection(id-1, 0);
-        rotateDial(id);
+        rotateDial(id, 'enter');
       })
       .on('leave', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id-1;
         toggleSection(id-1, 1);
-        rotateDial(id-1);
+        rotateDial(id-1, 'leave');
       })
       .addTo(controller);
     }
@@ -61,25 +61,45 @@ $( document ).ready(function() {
     $('[data-item="'+step+'"]').css('opacity', opacity);
   }
 
-  function rotateDial(step) {
+  function rotateDial(step, direction) {
     $('.dial').clearQueue();
     if (step>=2) {
-      if (step==2) {
-        $('.dial').delay(500).animate({
-          bottom: -400,
-          opacity: 1
-        }, 1000, 'easeInOutQuart');
-
+      if (step==2 || step==8) {       
         $('nav, .nav-dataviz').hide();
+        if (step==8 || direction=='leave') { 
+          $('.dial').css('transform', 'rotate(0deg) translateX(-50%)');
+          $('.dial').delay(700).animate({
+            bottom: -445,
+            width: 660
+          }, 1000, 'easeOutQuart', function() {
+            $('.dial').css('opacity', 1);
+          });
+        }
+        else {
+          $('.dial').css('opacity', 1);
+          $('.dial').delay(500).animate({
+            bottom: -445,
+            width: 660
+          }, 1000, 'easeOutQuart');
+        }
       }
       else if (step==3) {
         $('.dial').animate({
-          bottom: -590,
+          bottom: -720,
+          opacity: 1,
+          width: 800
         }, 1000, 'easeInOutQuart', function() {
           $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
+          $('nav, .nav-dataviz').show();
         });
-
+      }
+      else if (step==8 || direction=='leave') {
         $('nav, .nav-dataviz').show();
+        $('.dial').animate({
+          bottom: -720,
+          width: 800,
+        }, 1000, 'easeInOutQuart');
+        $('.dial').delay(500).css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
       }
       else {
         $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
@@ -87,9 +107,10 @@ $( document ).ready(function() {
     }
     else {
       $('.dial').animate({
-        bottom: -620,
-        opacity: 0
-      }, 500, 'easeInOutQuart', function() {
+        bottom: -710,
+        opacity: 0,
+        width: 660
+      }, 750, 'easeOutQuart', function() {
         $('.dial').css('transform', 'rotate(0deg) translateX(-50%)');
       });
     }
