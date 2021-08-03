@@ -44,16 +44,38 @@ $( document ).ready(function() {
       .on('enter', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id;
+        setNav(id-2);
         toggleSection(id-1, 0);
         rotateDial(id, 'enter');
       })
       .on('leave', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id-1;
+        setNav(id-3);
         toggleSection(id-1, 1);
         rotateDial(id-1, 'leave');
       })
       .addTo(controller);
+    }
+  }
+
+  function setNav(id) {
+    //set main nav
+    if (id>0 && id<6) {
+      $('nav').show();
+    }
+    else {
+      $('nav').hide();
+    }
+    $('nav li').removeClass('active');
+    $('nav ul li:nth-child('+id).addClass('active');
+
+    //set dataviz nav
+    if (id>-1 && id<6) {
+      $('.nav-dataviz').show();
+    }
+    else {
+      $('.nav-dataviz').hide();
     }
   }
 
@@ -64,8 +86,7 @@ $( document ).ready(function() {
   function rotateDial(step, direction) {
     $('.dial').clearQueue();
     if (step>=2) {
-      if (step==2 || step==8) {       
-        $('nav, .nav-dataviz').hide();
+      if (step==2 || step==8) {
         if (step==8 || direction=='leave') { 
           $('.dial').css('transform', 'rotate(0deg) translateX(-50%)');
           $('.dial').delay(700).animate({
@@ -90,11 +111,9 @@ $( document ).ready(function() {
           width: 800
         }, 1000, 'easeInOutQuart', function() {
           $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
-          $('nav, .nav-dataviz').show();
         });
       }
       else if (step==8 || direction=='leave') {
-        $('nav, .nav-dataviz').show();
         $('.dial').animate({
           bottom: -720,
           width: 800,
