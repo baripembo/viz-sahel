@@ -1102,6 +1102,12 @@ h1 {
   font-size: 54px;
   line-height: 70px; }
 
+h2 {
+  font-family: 'Source Sans Pro', serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px; }
+
 main {
   flex: 1; }
 
@@ -1120,10 +1126,33 @@ nav {
     flex-flow: row;
     padding: 0; }
     nav ul li {
-      padding: 0 39px; }
-    nav ul img {
-      height: 70px;
-      width: 70px; }
+      padding: 0 21px; }
+      nav ul li:first-child {
+        padding-left: 0; }
+      nav ul li:last-child {
+        padding-right: 0; }
+      nav ul li.active img:first-child {
+        display: block; }
+      nav ul li.active img:nth-child(2) {
+        display: none; }
+      nav ul li img {
+        height: 99px;
+        margin-bottom: 8px;
+        width: 99px; }
+        nav ul li img:first-child {
+          display: none; }
+        nav ul li img:nth-child(2) {
+          display: block; }
+      nav ul li span {
+        text-transform: uppercase;
+        white-space: nowrap; }
+
+p {
+  font-size: 18px;
+  line-height: 24px; }
+  p.source {
+    font-size: 16px;
+    line-height: 20px; }
 
 footer {
   background-color: #353535;
@@ -1193,8 +1222,6 @@ footer {
     .section .box p {
       background-color: rgba(255, 255, 255, 0.75);
       color: #000;
-      font-size: 18px;
-      line-height: 24px;
       margin: 0 auto;
       padding: 20px;
       text-align: justify;
@@ -1209,8 +1236,6 @@ footer {
     transform: translate(-50%, -25%);
     width: 100%; }
     .section .intro p {
-      font-size: 18px;
-      line-height: 25px;
       margin: 0 auto;
       width: 446px; }
 
@@ -1228,13 +1253,28 @@ footer {
     width: 100%; }
 
 .dataviz-container {
-  background-color: #007CE1;
-  height: 100vh;
+  background-color: #EEE;
+  bottom: 0;
+  overflow-y: auto;
   position: fixed;
   left: 100vw;
   top: 0;
   width: 100vw;
   z-index: 6; }
+  .dataviz-container .dataviz {
+    margin: 0 auto;
+    max-width: 1082px; }
+    .dataviz-container .dataviz p {
+      margin: 0 auto;
+      padding-bottom: 60px;
+      width: 620px; }
+      .dataviz-container .dataviz p.source {
+        padding-bottom: 36px;
+        width: 100%; }
+    .dataviz-container .dataviz iframe {
+      border: 0; }
+    .dataviz-container .dataviz.dataviz-1 {
+      padding-top: 90px; }
 
 @media only screen and (max-width: 767px) {
   .logos .grid-container > div {
