@@ -332,4 +332,15 @@ footer {
     	}
     }
 	}
+	.image-container {
+		flex-flow: column;
+		img {
+			height: auto;
+			width: 100%;
+			&:first-child,
+			&:last-child {
+				padding: 0 0 20px;
+			}
+		}
+	}
 }
