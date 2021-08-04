@@ -16,6 +16,7 @@ $( document ).ready(function() {
 
     $('.nav-dataviz').on('click', function() {
       showDataviz();
+      $('body').css('overflow-y', 'hidden');
       $('.dataviz-container').animate({
         left: 0
       }, 500, 'easeOutQuart', function() {
@@ -25,6 +26,7 @@ $( document ).ready(function() {
 
     $('.nav-main').on('click', function() {
       $('.nav-main').hide();
+      $('body').css('overflow-y', 'auto');
       $('.dataviz-container').animate({
         left: '100vw'
       }, 500, 'easeOutQuart');
@@ -45,15 +47,15 @@ $( document ).ready(function() {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id;
         setNav(id-2);
-        toggleSection(id-1, 0);
-        rotateDial(id, 'enter');
+        setSection(id-1, 0);
+        setDial(id, 'enter');
       })
       .on('leave', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id-1;
         setNav(id-3);
-        toggleSection(id-1, 1);
-        rotateDial(id-1, 'leave');
+        setSection(id-1, 1);
+        setDial(id-1, 'leave');
       })
       .addTo(controller);
     }
@@ -79,60 +81,48 @@ $( document ).ready(function() {
     }
   }
 
-  function toggleSection(step, opacity) {
+  function setSection(step, opacity) {
     $('[data-item="'+step+'"]').css('opacity', opacity);
   }
 
-  function rotateDial(step, direction) {
+  function setDial(step, direction) {
     $('.dial').clearQueue();
-    if (step>=2) {
+    if (step>1) {
       if (step==2 || step==8) {
-        if (step==8 || direction=='leave') { 
-          $('.dial').css('transform', 'rotate(0deg) translateX(-50%)');
-          $('.dial').delay(700).animate({
-            bottom: -445,
-            width: 660
-          }, 1000, 'easeOutQuart', function() {
-            $('.dial').css('opacity', 1);
-          });
+        if (step==8 || direction=='leave') {
+          rotateDial(0, 0);
         }
-        else {
-          $('.dial').css('opacity', 1);
-          $('.dial').delay(500).animate({
-            bottom: -445,
-            width: 660
-          }, 1000, 'easeOutQuart');
-        }
+        $('.dial').animate({
+          bottom: -445,
+          opacity: 1,
+          width: 660
+        }, 1000, 'easeOutQuart');
       }
-      else if (step==3) {
+      else if (step==3 || (step==7 && direction=='leave')) {
         $('.dial').animate({
           bottom: -720,
           opacity: 1,
           width: 800
-        }, 1000, 'easeInOutQuart', function() {
-          $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
-        });
-      }
-      else if (step==8 || direction=='leave') {
-        $('.dial').animate({
-          bottom: -720,
-          width: 800,
         }, 1000, 'easeInOutQuart');
-        $('.dial').delay(500).css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
+        rotateDial(rotations[step], 750);
       }
       else {
-        $('.dial').css('transform', 'rotate(' + rotations[step] + 'deg) translateX(-50%)');
+        rotateDial(rotations[step], 0);
       }
     }
     else {
       $('.dial').animate({
-        bottom: -710,
+        bottom: -720,
         opacity: 0,
         width: 660
       }, 750, 'easeOutQuart', function() {
-        $('.dial').css('transform', 'rotate(0deg) translateX(-50%)');
+        rotateDial(0, 0);
       });
     }
+  }
+
+  function rotateDial(deg, delay) {
+    $('.dial').delay(delay).css('transform', 'rotate('+deg+'deg) translateX(-50%)');
   }
 
   function showDataviz() {
