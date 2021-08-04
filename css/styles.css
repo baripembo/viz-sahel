@@ -1099,8 +1099,8 @@ body {
 
 h1 {
   font-family: 'Source Serif Pro', serif;
-  font-size: 54px;
-  line-height: 70px; }
+  font-size: 64px;
+  line-height: 80px; }
 
 h2 {
   font-family: 'Source Sans Pro', serif;
@@ -1119,26 +1119,23 @@ nav {
   text-align: center;
   top: 0;
   transform: translateX(-50%);
+  width: 702px;
   z-index: 4; }
   nav ul {
-    list-style-type: none;
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
     flex-flow: row;
+    list-style-type: none;
     padding: 0; }
     nav ul li {
+      width: 20%;
       padding: 0 21px; }
-      nav ul li:first-child {
-        padding-left: 0; }
-      nav ul li:last-child {
-        padding-right: 0; }
       nav ul li.active img:first-child {
         display: block; }
       nav ul li.active img:nth-child(2) {
         display: none; }
       nav ul li img {
-        height: 99px;
-        margin-bottom: 8px;
-        width: 99px; }
+        margin-bottom: 8px; }
         nav ul li img:first-child {
           display: none; }
         nav ul li img:nth-child(2) {
@@ -1236,8 +1233,10 @@ footer {
     transform: translate(-50%, -25%);
     width: 100%; }
     .section .intro p {
+      font-size: 28px;
+      line-height: 35px;
       margin: 0 auto;
-      width: 446px; }
+      width: 660px; }
 
 .dial {
   bottom: -710px;
@@ -1275,10 +1274,36 @@ footer {
       border: 0; }
     .dataviz-container .dataviz.dataviz-1 {
       padding-top: 90px; }
+      .dataviz-container .dataviz.dataviz-1 iframe {
+        height: 100%;
+        min-height: 500px;
+        width: 100%; }
 
 @media only screen and (max-width: 767px) {
-  .logos .grid-container > div {
-    padding: 0;
-    text-align: center; }
-  .logos img {
-    margin: 10px; } }
+  nav {
+    width: 100%; }
+    nav ul li {
+      padding: 0 11px; }
+      nav ul li span {
+        white-space: normal; }
+  h1 {
+    font-size: 40px;
+    line-height: 55px; }
+  .section {
+    padding: 0 20px; }
+    .section .intro {
+      padding: 0 20px; }
+      .section .intro p {
+        font-size: 18px;
+        line-height: 25px;
+        width: 100%; }
+    .section .box p {
+      width: 100%; }
+  .dataviz-container .dataviz {
+    padding: 90px 20px 0;
+    width: 100%; }
+    .dataviz-container .dataviz p {
+      width: 100%; }
+    .dataviz-container .dataviz.dataviz-1 iframe {
+      height: 100%;
+      width: 100%; } }
