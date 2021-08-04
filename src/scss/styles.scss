@@ -26,8 +26,8 @@ body {
 
 h1 {
 	font-family: 'Source Serif Pro', serif;
-	font-size: 54px;
-	line-height: 70px;
+	font-size: 64px;
+	line-height: 80px;
 }
 
 h2 {
@@ -49,20 +49,17 @@ nav {
   text-align: center;
   top: 0;
   transform: translateX(-50%);
+  width: 702px;
   z-index: 4;
-	ul {
-		list-style-type: none;
-		display: inline-flex;
+	ul {		
+		display: flex;
+  	justify-content: space-between;
 		flex-flow: row;
+		list-style-type: none;
 		padding: 0;
 		li {
+			width: 20%;
 			padding: 0 21px;
-			&:first-child {
-				padding-left: 0;
-			}
-			&:last-child {
-				padding-right: 0;
-			}
 			&.active {
 				img:first-child {
 					display: block;
@@ -72,9 +69,7 @@ nav {
 				}
 			}
 			img {
-				height: 99px;
 				margin-bottom: 8px;
-				width: 99px;
 				&:first-child {
 					display: none;
 				}
@@ -201,8 +196,10 @@ footer {
 		transform: translate(-50%, -25%);
   	width: 100%;
 		p {
+			font-size: 28px;
+			line-height: 35px;
 			margin: 0 auto;
-			width: 446px;
+			width: 660px;
 		}
 	}
 }
@@ -247,19 +244,61 @@ footer {
 		}
 		&.dataviz-1 {
 			padding-top: 90px;
+			iframe {				
+  			height: 100%;
+  			min-height: 500px;
+  			width: 100%;
+			}
 		}
 	}
 }
 
 
 @media only screen and (max-width: 767px) {
-	.logos {
-		.grid-container > div {
-			padding: 0;
-			text-align: center;
+	nav {
+		width: 100%;
+		ul {
+			li {
+				padding: 0 11px;
+				span {
+					white-space: normal;
+				}
+			}
 		}
-		img {
-			margin: 10px;
+	}
+	h1 {
+		font-size: 40px;
+    line-height: 55px;
+	}
+	.section {
+		padding: 0 20px;
+		.intro {
+			padding: 0 20px;
+			p {
+				font-size: 18px;
+				line-height: 25px;
+				width: 100%;
+			}
 		}
+		.box {
+			p {
+				width: 100%;
+			}
+		}
+	}
+	.dataviz-container {
+		.dataviz {
+    	padding: 90px 20px 0;
+    	width: 100%;
+    	p {
+    		width: 100%;
+    	}
+    	&.dataviz-1 {
+    		iframe {
+    			height: 100%;
+    			width: 100%;
+    		}
+    	}
+    }
 	}
 }
