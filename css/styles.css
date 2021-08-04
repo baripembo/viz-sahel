@@ -1328,4 +1328,11 @@ footer {
       width: 100%; }
     .dataviz-container .dataviz.dataviz-1 iframe {
       height: 100%;
-      width: 100%; } }
+      width: 100%; }
+  .image-container {
+    flex-flow: column; }
+    .image-container img {
+      height: auto;
+      width: 100%; }
+      .image-container img:first-child, .image-container img:last-child {
+        padding: 0 0 20px; } }
