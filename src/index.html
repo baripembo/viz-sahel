@@ -44,6 +44,9 @@
       </nav>
 
       <div class='nav-dataviz'>></div>
+      <div class="scroll-arrow">↓<br>
+        <span class="arrow-text">scroll</span>
+      </div>
       
       <div class='story-container'>
         <div class='pin-item'>
@@ -98,7 +101,7 @@
         </section>
         <section class='section' data-section='6'>
           <div class='box'><p>As Zara continues her journey, she passes by a patch of farmland that has been trampled by cattle of pastoralists forced to migrate south before crops could be harvested.  The diminished availability of both land and water resources has made insufficient harvests and food shortages more common and threatens the livelihood of farmers across the country. The competition for limited resources between farmers and pastoralists has also led to an increase in intercommunal conflict, compounding an already fragile situation.</p></div>
-          <div class='box'><p>In Chad, over four million people are affected by food insecurity and malnutrition each year. In 2021, this number is expected to reach 5,1 million people during the lean season, with 1,7 million people experiencing severe food insecurity.  During the lean season, the period between sowing and harvesting, many people in the region are left with little or no access to food for months on end. This situation is likely to worsen with the relentless ravages of climate change.</p></div>
+          <div class='box'><p>In Chad, over four million people are affected by food insecurity and malnutrition each year. In 2021, this number is expected to reach 5.1 million people during the lean season, with 1.7 million people experiencing severe food insecurity.  During the lean season, the period between sowing and harvesting, many people in the region are left with little or no access to food for months on end. This situation is likely to worsen with the relentless ravages of climate change.</p></div>
         </section>
         <section class='section' data-section='7'>
           <div class='box'><p>After hours walking through perilous terrain, Zara reaches her destination. She fills her container with water from a well, which could be contaminated by dust or cattle manure. Zara is tired from the long journey but does not have time to rest, so she quickly starts the journey back home.</p></div>
@@ -119,25 +122,68 @@
       <div class='nav-main'><</div>
       <div class='dataviz dataviz-1'>
         <p>The six Sahelien countries being explored (Burkina Faso, Cameroon, Chad, Mali, Niger and Nigeria) are among the most climate vulnerable countries in the world, though their contributions to climate change are among the lowest (with Nigeria being higher than the others). In addition to experiencing the most extreme effects of climate change, these countries are also the least prepared to deal with its grave and worsening consequences.</p>
-        <h2>Climate change vulnerability & readiness and CO2 emissions by country:</h2>
-        <iframe src='https://jhjanicki.github.io/climate_change/'></iframe>
-        <p class='source'><b>Data source:</b> <a href='https://gain.nd.edu/our-work/country-index' target='_blank'>ND-GAIN Country Index</a> (June 2021), <a href='https://data.worldbank.org/indicator/EN.ATM.CO2E.PC' target='_blank'>World Bank: World Development Indicators</a> (2018)</p>
+        <div class='container'>
+          <h3>Climate change vulnerability & readiness and CO2 emissions by country:</h3>
+          <iframe src='https://jhjanicki.github.io/climate_change/'></iframe>
+          <p class='source'><b>Data source:</b> <a href='https://gain.nd.edu/our-work/country-index' target='_blank'>ND-GAIN Country Index</a> (June 2021), <a href='https://data.worldbank.org/indicator/EN.ATM.CO2E.PC' target='_blank'>World Bank: World Development Indicators</a> (2018)</p>
+        </div>
       </div>
-      <div class='dataviz dataviz-2'><h2>Dataviz: Home</h2></div>
+      <div class='dataviz dataviz-2'>
+        <p>Climate hazards especially affect women and girls as they often bear the burden of taking care of their families, for example by going without meals to feed others. Moreover, the livelihoods of rural women often depend on natural resources which are threatened by climate change. Insufficient water sources can require women and girls to travel farther to collect water, with the increased walking distance itself potentially harmful, as it may put them at risk for violence, but it can also lead to girls missing out on education.  Evidence also suggests that communities under stress may adapt more conservative or customary patriarchal practices.</p>
+        <p>Four out of the six countries in question are ranked among the bottom 20 countries when it comes to the gender gap score (measures gaps in education, health, political and economical areas).  With a score of 0.591, Mali has closed only 59% of its gender parity gap.  In Chad and Nigeria, gender gaps in primary education enrollment are still over 15%.</p>
+        <p>Moreover, research that uses the Social Institutions and Gender Index (SIGI) has shown that women in Chad, Mali and Niger often experience discrimination based on marriage and family conventions, violence against women, and access to resources.</p>
+        <div class='container double-layout'>
+          <div>
+            <h3>Sahel is far from closing the gender gap</h3>
+            <img src='assets/images/dataviz/gendergap_sahel.jpg' />
+            <p class='source'><b>Data source:</b> <a href='http://www3.weforum.org/docs/WEF_GGGR_2021.pdf' target='_blank'>Gender gap score (Global Gender Gap Report 2021 Table 1.1)</a></p>
+          </div>
+          <div>
+            <h3>Women often face restrictions/discrimination in various contexts in the Sahel</h3>
+            <img src='assets/images/dataviz/sigi_sahel.jpg' />
+            <p class='source'><b>Data source:</b> <a href='https://www.genderindex.org/ranking/' target='_blank'>SIGI index (2019)</a></p>
+          </div>
+        </div>
+      </div>
       <div class='dataviz dataviz-3'>
-        <p>Climate-linked disasters have become more frequent and catastrophic in recent years and they are projected to get worse. In the 2010s, though there were fewer events, more people were affected, suggesting that the impacts of individual events have gotten worse.</p>
-        <h2>Droughts and floods in the Sahel since the 1960s</h2>
-        <div class='image-container'>
-          <img src='assets/images/dataviz/floods-droughts-1960s_num_events.jpg' />
-          <img src='assets/images/dataviz/floods-droughts-1960s_ppl_affected.jpg' />
+        <p>Climate-linked disasters have become more frequent and catastrophic in recent years and they are projected to get worse. In the 2010s, though there were fewer events compared to the 2000s, more people were affected, suggesting that the impacts of individual events have gotten worse.</p>
+        <div class='container double-layout'>
+          <div>
+            <h3>Droughts and floods in the Sahel since the 1960s</h3>
+            <img src='assets/images/dataviz/floods-droughts-1960s_num_events.jpg' />
+          </div>
+          <div>
+            <h3>&nbsp;</h3>
+            <img src='assets/images/dataviz/floods-droughts-1960s_ppl_affected.jpg' />
+          </div>
         </div>
         <p>Since 2008, over 60 million people have been affected by droughts, floods and storms in the Sahel. Some countries are mainly experiencing droughts or floods, while others are dealing with both.</p>
-        <h2>The number of people affected by droughts and floods since 2014</h2>
-        <iframe src='https://jhjanicki.github.io/droughts_floods/'></iframe>
-        <p class='source'><b>Data source:</b> <a href='https://data.humdata.org/dataset/emdat-country-profiles' target='_blank'>CRED EM-DAT database</a></p>
+        <div class='container'>
+          <h3>The number of people affected by droughts and floods since 2014</h3>
+          <iframe src='https://jhjanicki.github.io/droughts_floods/'></iframe>
+          <p class='source'><b>Data source:</b> <a href='https://data.humdata.org/dataset/emdat-country-profiles' target='_blank'>CRED EM-DAT database</a></p>
+        </div>
+      </div>
       <div class='dataviz dataviz-4'><h2>Dataviz: Cattle</h2></div>
-      <div class='dataviz dataviz-5'><h2>Dataviz: Farm</h2></div>
-      <div class='dataviz dataviz-6'><h2>Dataviz: Well</h2></div>
+      <div class='dataviz dataviz-5'>
+        <p>The Sahel region has struggled with food insecurity and severe issues of malnutrition; the region has among the highest rates of childhood malnutrition and stunting in the world. Moreover, the IPCC predicts that agricultural yields will fall by 20% per decade by the end of the 21st century in some regions of the Sahel.</p>
+        <p>Declines in crop productivity are linked to rising temperatures and changes in precipitations. In 2020, over 47 million people in the six Sahelien countries are experiencing phase 2 (stressed) food insecurity and nearly 20 million people are experiencing phase 3+ (crisis/emergency) food insecurity. These numbers are projected to increase if no mitigating action is taken.</p>
+        <div class='container'>
+          <h3>Percent population/number of people facing food insecurity in the Sahel (IPC/CH Phases):</h3>
+          <iframe src='https://jhjanicki.github.io/food_insecurity_sahel/'></iframe>
+          <p class='source'><b>Data source:</b> <a href='https://www.fsinplatform.org/global-report-food-crises-2021-acute-food-insecurity-table' target='_blank'>FSIN - Global Report on Food Crises 2021</a></p>
+        </div>
+      </div>
+      <div class='dataviz dataviz-6'>
+        <p>More frequent climate shocks can exacerbate existing vulnerabilities and create conditions in which any small shock can lead to humanitarian emergencies. The global poverty rate - the share of the world’s population living on less than $1.90 per day - is 9.3% in 2021. Across the six Sahelian countries, that number averages over 40%, putting them in an already vulnerable position without the additional effects of climate change. Moreover, all six countries are projected to be off track when it comes to halving their poverty by 2030.</p>
+        <div class='container single-layout'>
+          <div>
+            <h3>% population living at or below $1.90 a day (% population living in extreme poverty)</h3>
+            <img src='assets/images/dataviz/percentBelow190.jpg' />
+            <p class='source'><b>Data source:</b> <a href='http://hdr.undp.org/en/2020-MPI' target='_blank'>UNDP - Global Multidimensional Poverty Index (2020)</a></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>
