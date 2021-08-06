@@ -123,19 +123,43 @@ footer {
 
 .nav-dataviz,
 .nav-main {
-  color: #FFF;
+	align-items: center;
+	color: #000;
   cursor: pointer;
   display: none;
-  font-size: 40px;
+  flex-flow: row;
+  font-size: 14px;
+  left: auto;
 	position: fixed;
   right: 20px;
   top: 50%;
   z-index: 5;
+  .arrow {
+		background: no-repeat url('../assets/icons/arrow_black.svg');
+    display: inline-block;
+    height: 10px;
+    margin: 0 0 0 5px;
+		width: 30px;
+  }
+  &.active {
+  	display: flex;
+  }
+  &.light {
+		color: #FFF;
+	  .arrow {
+			background: no-repeat url('../assets/icons/arrow_white.svg');
+		}
+  }
 }
 
 .nav-main {
 	left: 20px;
 	right: auto;
+  .arrow {
+		background-position: left center;
+    margin: 0 5px 0 0;
+		transform: rotate(-180deg);
+	}
 }
 
 .tooltip {
@@ -228,8 +252,7 @@ footer {
 	min-height: 100vh;
 	position: relative;
 	z-index: 2;
-	&[data-section="1"],
-	&[data-section="8"] {
+	&[data-section="1"] {
 		height: 150vh;
 	}
 	.box {
@@ -315,13 +338,14 @@ footer {
 		.container {
 			padding: 30px 0;
 		}
-		&.dataviz-1 {
-		}
-		&.dataviz-2 {
-		}
 		&.dataviz-3 {
 			iframe {
 				height: 700px;
+			}
+		}
+		&.dataviz-5 {
+			iframe {
+				height: 650px;
 			}
 		}
 	}
