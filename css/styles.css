@@ -1176,18 +1176,41 @@ footer {
 
 .nav-dataviz,
 .nav-main {
-  color: #FFF;
+  align-items: center;
+  color: #000;
   cursor: pointer;
   display: none;
-  font-size: 40px;
+  flex-flow: row;
+  font-size: 14px;
+  left: auto;
   position: fixed;
   right: 20px;
   top: 50%;
   z-index: 5; }
+  .nav-dataviz .arrow,
+  .nav-main .arrow {
+    background: no-repeat url("../assets/icons/arrow_black.svg");
+    display: inline-block;
+    height: 10px;
+    margin: 0 0 0 5px;
+    width: 30px; }
+  .nav-dataviz.active,
+  .nav-main.active {
+    display: flex; }
+  .nav-dataviz.light,
+  .nav-main.light {
+    color: #FFF; }
+    .nav-dataviz.light .arrow,
+    .nav-main.light .arrow {
+      background: no-repeat url("../assets/icons/arrow_white.svg"); }
 
 .nav-main {
   left: 20px;
   right: auto; }
+  .nav-main .arrow {
+    background-position: left center;
+    margin: 0 5px 0 0;
+    transform: rotate(-180deg); }
 
 .tooltip {
   max-width: 250px;
@@ -1260,7 +1283,7 @@ footer {
   min-height: 100vh;
   position: relative;
   z-index: 2; }
-  .section[data-section="1"], .section[data-section="8"] {
+  .section[data-section="1"] {
     height: 150vh; }
   .section .box {
     height: 100vh; }
@@ -1337,6 +1360,8 @@ footer {
       padding: 30px 0; }
     .dataviz-container .dataviz.dataviz-3 iframe {
       height: 700px; }
+    .dataviz-container .dataviz.dataviz-5 iframe {
+      height: 650px; }
 
 .double-layout {
   display: flex;

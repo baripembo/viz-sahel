@@ -1664,25 +1664,25 @@ $( document ).ready(function() {
     //preload images
     preload([
       'assets/images/1-main.jpeg',
-      'assets/images/2-girl.jpeg',
-      'assets/images/3-drought.jpeg',
-      'assets/images/4-cattle.jpeg',
-      'assets/images/5-farm.jpeg',
-      'assets/images/6-well.jpeg'
+      'assets/images/home.jpg',
+      'assets/images/river.jpg',
+      'assets/images/cattle.jpg',
+      'assets/images/farm.jpg',
+      'assets/images/well.jpg'
     ]);
 
     $('.nav-dataviz').on('click', function() {
       showDataviz();
       $('body').css('overflow-y', 'hidden');
-      $('.dataviz-container').animate({
+      $('.dataviz-container').scrollTop(0).animate({
         left: 0
       }, 500, 'easeOutQuart', function() {
-        $('.nav-main').show();
+        $('.nav-main').addClass('active');
       });
     });
 
     $('.nav-main').on('click', function() {
-      $('.nav-main').hide();
+      $('.nav-main').removeClass('active');
       $('body').css('overflow-y', 'auto');
       $('.dataviz-container').animate({
         left: '100vw'
@@ -1731,10 +1731,15 @@ $( document ).ready(function() {
 
     //set dataviz nav
     if (id>-1 && id<6) {
-      $('.nav-dataviz').show();
+      $('.nav-dataviz').addClass('active');
+      //set light/dark variation
+      if (id==2 || id==4 || id==5)
+        $('.nav-dataviz').addClass('light');
+      else
+        $('.nav-dataviz').removeClass('light');
     }
     else {
-      $('.nav-dataviz').hide();
+      $('.nav-dataviz').removeClass('active');
     }
   }
 
