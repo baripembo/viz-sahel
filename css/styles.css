@@ -1141,24 +1141,36 @@ nav {
     list-style-type: none;
     padding: 0; }
     nav ul li {
-      width: 20%;
-      padding: 0 21px; }
-      nav ul li.active img:first-child {
-        display: block; }
-      nav ul li.active img:nth-child(2) {
-        display: none; }
-      nav ul li.active span {
+      cursor: pointer;
+      padding: 0 21px;
+      width: 20%; }
+      nav ul li:hover img, nav ul li.active img {
+        background-color: #3B3F3D; }
+      nav ul li:hover span, nav ul li.active span {
         font-weight: 600; }
       nav ul li img {
-        margin-bottom: 8px; }
-        nav ul li img:first-child {
-          display: none; }
-        nav ul li img:nth-child(2) {
-          display: block; }
+        background-color: #888;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        margin-bottom: 8px;
+        transition: background-color 0.5s ease; }
       nav ul li span {
         font-weight: normal;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
         white-space: nowrap; }
+  nav.nav-dataviz {
+    left: auto;
+    margin-bottom: 50px;
+    position: relative;
+    top: auto;
+    transform: none; }
+    nav.nav-dataviz ul li:hover img, nav.nav-dataviz ul li.active img {
+      background-color: #4B978F; }
+    nav.nav-dataviz ul li img {
+      background-color: #5DBCB3; }
+    nav.nav-dataviz ul li span {
+      text-shadow: none; }
 
 p {
   font-size: 18px;
@@ -1174,8 +1186,8 @@ footer {
   padding: 20px 0 10px;
   z-index: 5; }
 
-.nav-dataviz,
-.nav-main {
+.btn-dataviz,
+.btn-story {
   align-items: center;
   color: #000;
   cursor: pointer;
@@ -1187,27 +1199,27 @@ footer {
   right: 20px;
   top: 50%;
   z-index: 5; }
-  .nav-dataviz .arrow,
-  .nav-main .arrow {
+  .btn-dataviz .arrow,
+  .btn-story .arrow {
     background: no-repeat url("../assets/icons/arrow_black.svg");
     display: inline-block;
     height: 10px;
     margin: 0 0 0 5px;
     width: 30px; }
-  .nav-dataviz.active,
-  .nav-main.active {
+  .btn-dataviz.active,
+  .btn-story.active {
     display: flex; }
-  .nav-dataviz.light,
-  .nav-main.light {
+  .btn-dataviz.light,
+  .btn-story.light {
     color: #FFF; }
-    .nav-dataviz.light .arrow,
-    .nav-main.light .arrow {
+    .btn-dataviz.light .arrow,
+    .btn-story.light .arrow {
       background: no-repeat url("../assets/icons/arrow_white.svg"); }
 
-.nav-main {
+.btn-story {
   left: 20px;
   right: auto; }
-  .nav-main .arrow {
+  .btn-story .arrow {
     background-position: left center;
     margin: 0 5px 0 0;
     transform: rotate(-180deg); }
@@ -1346,7 +1358,7 @@ footer {
     max-width: 1082px; }
     .dataviz-container .dataviz p {
       margin: 0 auto;
-      padding: 30px 0 30px;
+      padding: 50px 0;
       width: 620px; }
       .dataviz-container .dataviz p.source {
         padding: 5px 0 36px;
@@ -1357,7 +1369,7 @@ footer {
       min-height: 500px;
       width: 100%; }
     .dataviz-container .dataviz .container {
-      padding: 30px 0; }
+      padding: 50px 0; }
     .dataviz-container .dataviz.dataviz-3 iframe {
       height: 700px; }
     .dataviz-container .dataviz.dataviz-5 iframe {

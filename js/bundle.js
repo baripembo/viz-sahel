@@ -1671,22 +1671,36 @@ $( document ).ready(function() {
       'assets/images/well.jpg'
     ]);
 
-    $('.nav-dataviz').on('click', function() {
+    //btn to dataviz
+    $('.btn-dataviz').on('click', function() {
       showDataviz();
       $('body').css('overflow-y', 'hidden');
       $('.dataviz-container').scrollTop(0).animate({
         left: 0
       }, 500, 'easeOutQuart', function() {
-        $('.nav-main').addClass('active');
+        $('.btn-story').addClass('active');
       });
     });
 
-    $('.nav-main').on('click', function() {
-      $('.nav-main').removeClass('active');
+    //btn back to story
+    $('.btn-story').on('click', function() {
+      $(this).removeClass('active');
+      $('.nav-dataviz').hide();
       $('body').css('overflow-y', 'auto');
       $('.dataviz-container').animate({
         left: '100vw'
       }, 500, 'easeOutQuart');
+    });
+
+    //story nav events 
+    $('.nav-story li').on('click', function() {
+      var id = $(this).attr('data-id');
+      var target = $('#'+id);
+      var top = target.offset().top - $(window).height()/2 + target.find('.box:first-child p').height()/2;
+      console.log(id, $('#'+id).offset().top, $('.nav-story').height(), top)
+      $('html, body').animate({
+        scrollTop: top
+      }, 1000, 'easeOutQuad');
     });
 
     initSections();
@@ -1721,25 +1735,25 @@ $( document ).ready(function() {
   function setNav(id) {
     //set main nav
     if (id>0 && id<6) {
-      $('nav').show();
+      $('.nav-story').show();
     }
     else {
-      $('nav').hide();
+      $('.nav-story').hide();
     }
     $('nav li').removeClass('active');
     $('nav ul li:nth-child('+id).addClass('active');
 
     //set dataviz nav
     if (id>-1 && id<6) {
-      $('.nav-dataviz').addClass('active');
+      $('.btn-dataviz').addClass('active');
       //set light/dark variation
       if (id==2 || id==4 || id==5)
-        $('.nav-dataviz').addClass('light');
+        $('.btn-dataviz').addClass('light');
       else
-        $('.nav-dataviz').removeClass('light');
+        $('.btn-dataviz').removeClass('light');
     }
     else {
-      $('.nav-dataviz').removeClass('active');
+      $('.btn-dataviz').removeClass('active');
     }
   }
 
@@ -1791,6 +1805,9 @@ $( document ).ready(function() {
     let id = Number(currentSection)-1
     $('.dataviz-container').find('.dataviz').hide();
     $('.dataviz-container').find('.dataviz-'+id).show();
+    if (id>1) {
+      $('.nav-dataviz').show();
+    }
   }
 
   function initTracking() {
