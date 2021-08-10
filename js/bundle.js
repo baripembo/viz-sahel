@@ -1,9 +1,4 @@
 window.$ = window.jQuery = require('jquery');
-function preload(arrayOfImages) {
-  $(arrayOfImages).each(function(){
-    (new Image()).src = this;
-  });
-}
 
 /*! jQuery UI - v1.12.1 - 2021-07-28
 * http://jqueryui.com
@@ -1656,9 +1651,10 @@ var effect = $.effects;
 
 }));
 $( document ).ready(function() {
-  let isMobile = $(window).width()<600? true : false;
+  let viewportWidth = $(window).width()
   let currentSection = 1;
-  const rotations = [0, 0, 0, 60, 30, 0, -30, -60]
+  let dialHeight, dialPos, dialWidth, dialWidthZoom;
+  const rotations = [0, 0, 0, 60, 30, 0, -30, -60];
 
   function init() {
     //preload images
@@ -1704,6 +1700,33 @@ $( document ).ready(function() {
     });
 
     initSections();
+  }
+
+  function preload(imgArray) {
+    var loadedCount = 0
+    $(imgArray).each(function(){
+      var img = new Image();
+      img.src = this;
+      img.onload = function() {
+        loadedCount++;
+        if (loadedCount==imgArray.length) {
+          loadComplete();
+        }
+      }
+    });
+  }
+
+  function loadComplete() {
+    $('.loader').hide();
+    $('main').css('opacity', 1);
+
+    //init dial
+    dialHeight = $('.dial').height();
+    dialPos = dialHeight * 0.62;
+    dialWidth = viewportWidth>=768 ? 660 : viewportWidth;
+    dialWidthZoom = viewportWidth*1.2;
+
+    console.log(dialHeight, dialPos, dialWidth, dialWidthZoom)
   }
 
   function initSections() {
@@ -1769,16 +1792,16 @@ $( document ).ready(function() {
           rotateDial(0, 0);
         }
         $('.dial').animate({
-          bottom: -445,
+          bottom: -dialPos,
           opacity: 1,
-          width: 660
+          width: dialWidth
         }, 1000, 'easeOutQuart');
       }
       else if (step==3 || (step==7 && direction=='leave')) {
         $('.dial').animate({
-          bottom: -720,
+          bottom: -dialHeight,
           opacity: 1,
-          width: 800
+          width: dialWidthZoom
         }, 1000, 'easeInOutQuart');
         rotateDial(rotations[step], 750);
       }
@@ -1788,9 +1811,9 @@ $( document ).ready(function() {
     }
     else {
       $('.dial').animate({
-        bottom: -720,
+        bottom: -dialHeight,
         opacity: 0,
-        width: 660
+        width: dialWidth
       }, 750, 'easeOutQuart', function() {
         rotateDial(0, 0);
       });

@@ -1078,6 +1078,41 @@
   .col-12 {
     grid-column: 1 / -1; } }
 
+.loader {
+  color: #000;
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.sp {
+  clear: both;
+  height: 32px;
+  margin: 0 auto 5px;
+  width: 32px; }
+
+/* Spinner Circle Rotation */
+.sp-circle {
+  border: 4px rgba(0, 0, 0, 0.25) solid;
+  border-top: 4px black solid;
+  border-radius: 50%;
+  -webkit-animation: spCircRot .6s infinite linear;
+  animation: spCircRot .6s infinite linear; }
+
+@-webkit-keyframes spCircRot {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@keyframes spCircRot {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
 * {
   box-sizing: border-box; }
 
@@ -1089,6 +1124,7 @@ html, body {
   height: 100%; }
 
 body {
+  background-color: #EFE4CE;
   display: flex;
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
@@ -1122,7 +1158,9 @@ a:visited {
   color: #79AFE7; }
 
 main {
-  flex: 1; }
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.5 ease; }
 
 nav {
   display: none;
@@ -1153,10 +1191,11 @@ nav {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         border-radius: 50%;
         margin-bottom: 8px;
-        transition: background-color 0.5s ease; }
+        transition: background-color 0.5s ease;
+        width: 100%; }
       nav ul li span {
         font-weight: normal;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         text-transform: uppercase;
         white-space: nowrap; }
   nav.nav-dataviz {
@@ -1272,10 +1311,6 @@ footer {
     width: 100%; }
     .story-container .pin-item .item {
       transition: opacity 1s ease; }
-      .story-container .pin-item .item.item-1 {
-        margin-top: -200px; }
-      .story-container .pin-item .item.item-2 div {
-        background-color: #FCD09A; }
       .story-container .pin-item .item.item-8 div {
         background-color: #EFE4CE; }
       .story-container .pin-item .item img,
@@ -1417,6 +1452,8 @@ footer {
         width: 100%; }
     .section .box p {
       width: 100%; }
+  .dial {
+    width: 100%; }
   .dataviz-container .dataviz {
     padding: 90px 20px 0;
     width: 100%; }
@@ -1427,10 +1464,9 @@ footer {
       width: 100%; }
   .double-layout {
     flex-flow: column; }
-    .double-layout img {
-      height: auto;
+    .double-layout div {
       width: 100%; }
-      .double-layout img:first-child, .double-layout img:last-child {
-        padding: 0 0 20px; }
+      .double-layout div:first-child, .double-layout div:last-child {
+        padding: 0; }
   .single-layout {
     width: 100%; } }
