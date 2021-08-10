@@ -1,5 +1,6 @@
 @import '_fonts';
 @import '_grid';
+@import '_loader';
 
 * {
 	box-sizing: border-box;
@@ -15,6 +16,7 @@ html, body {
 }
 
 body {
+	background-color: #EFE4CE;
  	display: flex;
   flex-direction: column;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -54,6 +56,8 @@ a:visited {
 
 main {
 	flex: 1;
+	opacity: 0;
+	transition: opacity 0.5 ease;
 }
 
 nav {
@@ -91,10 +95,11 @@ nav {
     		border-radius: 50%;
 				margin-bottom: 8px;
 				transition: background-color 0.5s ease;
+				width: 100%;
 			}
 			span {
 				font-weight: normal;
-				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 				text-transform: uppercase;
 				white-space: nowrap;
 			}
@@ -238,14 +243,6 @@ footer {
 		width: 100%;
 		.item {
 	  	transition: opacity 1s ease;
-	  	&.item-1 {
-	  		margin-top: -200px;
-	  	}
-	  	&.item-2 {
-	  		div {
-	  			background-color: #FCD09A;
-	  		}
-	  	}
 	  	&.item-8 {
 	  		div {
 	  			background-color: #EFE4CE;
@@ -432,6 +429,9 @@ footer {
 			}
 		}
 	}
+	.dial {
+		width: 100%;
+	}
 	.dataviz-container {
 		.dataviz {
     	padding: 90px 20px 0;
@@ -449,12 +449,11 @@ footer {
 	}
 	.double-layout {
 		flex-flow: column;
-		img {
-			height: auto;
+		div {
 			width: 100%;
 			&:first-child,
 			&:last-child {
-				padding: 0 0 20px;
+				padding: 0;
 			}
 		}
 	}
