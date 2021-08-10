@@ -1724,7 +1724,7 @@ $( document ).ready(function() {
     dialHeight = $('.dial').height();
     dialPos = dialHeight * 0.62;
     dialWidth = viewportWidth>=768 ? 660 : viewportWidth;
-    dialWidthZoom = viewportWidth*1.2;
+    dialWidthZoom = viewportWidth>=768 ? 800 : viewportWidth*1.2;
 
     console.log(dialHeight, dialPos, dialWidth, dialWidthZoom)
   }
