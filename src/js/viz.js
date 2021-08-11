@@ -95,10 +95,10 @@ $( document ).ready(function() {
         setSection(currentSection, 1);
         setDial(currentSection, 'leave');
       })
-      .on('progress', function(e) {
-        console.log('progress',e.progress)
-      })
-      .addIndicators()
+      // .on('progress', function(e) {
+      //   console.log('progress',e.progress)
+      // })
+      // .addIndicators()
       .addTo(controller);
     }
   }
