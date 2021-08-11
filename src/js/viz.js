@@ -105,14 +105,14 @@ $( document ).ready(function() {
 
   function setNav(id) {
     //set main nav
-    if (id>0 && id<6) {
-      $('.nav-story').show();
-    }
-    else {
-      $('.nav-story').hide();
-    }
-    $('nav li').removeClass('active');
-    $('nav ul li:nth-child('+id).addClass('active');
+    // if (id>0 && id<6) {
+    //   $('.nav-story').show();
+    // }
+    // else {
+    //   $('.nav-story').hide();
+    // }
+    // $('nav li').removeClass('active');
+    // $('nav ul li:nth-child('+id).addClass('active');
 
     //set dataviz nav
     if (id>-1 && id<6) {
@@ -176,9 +176,9 @@ $( document ).ready(function() {
     let id = Number(currentSection)-1
     $('.dataviz-container').find('.dataviz').hide();
     $('.dataviz-container').find('.dataviz-'+id).show();
-    if (id>1) {
-      $('.nav-dataviz').show();
-    }
+    // if (id>1) {
+    //   $('.nav-dataviz').show();
+    // }
   }
 
   function initTracking() {
