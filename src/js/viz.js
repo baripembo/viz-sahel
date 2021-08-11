@@ -2,7 +2,7 @@ $( document ).ready(function() {
   let viewportWidth = $(window).width()
   let currentSection = 1;
   let dialHeight, dialPos, dialWidth, dialWidthZoom;
-  const rotations = [0, 0, 0, 60, 30, 0, -30, -60];
+  const rotations = [0, 0, 0, 45, 15, -15, -45];
 
   function init() {
     //preload images
@@ -10,7 +10,6 @@ $( document ).ready(function() {
       'assets/images/1-main.jpeg',
       'assets/images/home.jpg',
       'assets/images/river.jpg',
-      'assets/images/cattle.jpg',
       'assets/images/farm.jpg',
       'assets/images/well.jpg'
     ]);
@@ -37,15 +36,14 @@ $( document ).ready(function() {
     });
 
     //story nav events 
-    $('.nav-story li').on('click', function() {
-      var id = $(this).attr('data-id');
-      var target = $('#'+id);
-      var top = target.offset().top - $(window).height()/2 + target.find('.box:first-child p').height()/2;
-      console.log(id, $('#'+id).offset().top, $('.nav-story').height(), top)
-      $('html, body').animate({
-        scrollTop: top
-      }, 1000, 'easeOutQuad');
-    });
+    // $('.nav-story li').on('click', function() {
+    //   var id = $(this).attr('data-id');
+    //   var target = $('#'+id);
+    //   var top = target.offset().top - $(window).height()/2 + target.find('.box:first-child p').height()/2;
+    //   $('html, body').animate({
+    //     scrollTop: top
+    //   }, 1000, 'easeOutQuad');
+    // });
 
     initSections();
   }
@@ -70,11 +68,9 @@ $( document ).ready(function() {
 
     //init dial
     dialHeight = $('.dial').height();
-    dialPos = dialHeight * 0.62;
+    dialPos = dialHeight * 0.74;
     dialWidth = viewportWidth>=768 ? 660 : viewportWidth;
     dialWidthZoom = viewportWidth>=768 ? 800 : viewportWidth*1.2;
-
-    console.log(dialHeight, dialPos, dialWidth, dialWidthZoom)
   }
 
   function initSections() {
@@ -88,17 +84,21 @@ $( document ).ready(function() {
       .on('enter', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id;
-        setNav(id-2);
-        setSection(id-1, 0);
-        setDial(id, 'enter');
+        setNav(currentSection);
+        setSection(currentSection-1, 0);
+        setDial(currentSection, 'enter');
       })
       .on('leave', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id-1;
-        setNav(id-3);
-        setSection(id-1, 1);
-        setDial(id-1, 'leave');
+        setNav(currentSection);
+        setSection(currentSection, 1);
+        setDial(currentSection, 'leave');
       })
+      .on('progress', function(e) {
+        console.log('progress',e.progress)
+      })
+      .addIndicators()
       .addTo(controller);
     }
   }
@@ -115,10 +115,10 @@ $( document ).ready(function() {
     // $('nav ul li:nth-child('+id).addClass('active');
 
     //set dataviz nav
-    if (id>-1 && id<6) {
+    if (id>1 && id<=6) {
       $('.btn-dataviz').addClass('active');
       //set light/dark variation
-      if (id==2 || id==4 || id==5)
+      if (id>=4)
         $('.btn-dataviz').addClass('light');
       else
         $('.btn-dataviz').removeClass('light');
@@ -134,9 +134,9 @@ $( document ).ready(function() {
 
   function setDial(step, direction) {
     $('.dial').clearQueue();
-    if (step>1) {
-      if (step==2 || step==8) {
-        if (step==8 || direction=='leave') {
+    if (step>1 && step<7) {
+      if (step==2) {
+        if (direction=='leave') {
           rotateDial(0, 0);
         }
         $('.dial').animate({
@@ -145,7 +145,7 @@ $( document ).ready(function() {
           width: dialWidth
         }, 1000, 'easeOutQuart');
       }
-      else if (step==3 || (step==7 && direction=='leave')) {
+      else if (step==3 || (step==6 && direction=='leave')) {
         $('.dial').animate({
           bottom: -dialHeight,
           opacity: 1,
