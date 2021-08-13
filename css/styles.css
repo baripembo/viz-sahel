@@ -1377,11 +1377,11 @@ footer {
   z-index: 6; }
   .dataviz-container .dataviz {
     margin: 0 auto;
-    max-width: 1082px; }
+    width: 800px; }
     .dataviz-container .dataviz p {
       margin: 0 auto;
-      padding: 50px 0;
-      width: 620px; }
+      padding: 20px 0;
+      width: 800px; }
       .dataviz-container .dataviz p.source {
         padding: 5px 0 36px;
         width: 100%; }
