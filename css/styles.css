@@ -1162,55 +1162,6 @@ main {
   opacity: 0;
   transition: opacity 0.5 ease; }
 
-nav {
-  display: none;
-  left: 50%;
-  position: fixed;
-  margin: 0 auto;
-  text-align: center;
-  top: 0;
-  transform: translateX(-50%);
-  width: 702px;
-  z-index: 4; }
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row;
-    list-style-type: none;
-    padding: 0; }
-    nav ul li {
-      cursor: pointer;
-      padding: 0 21px;
-      width: 20%; }
-      nav ul li:hover img, nav ul li.active img {
-        background-color: #3B3F3D; }
-      nav ul li:hover span, nav ul li.active span {
-        font-weight: 600; }
-      nav ul li img {
-        background-color: #888;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        margin-bottom: 8px;
-        transition: background-color 0.5s ease;
-        width: 100%; }
-      nav ul li span {
-        font-weight: normal;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        text-transform: uppercase;
-        white-space: nowrap; }
-  nav.nav-dataviz {
-    left: auto;
-    margin-bottom: 50px;
-    position: relative;
-    top: auto;
-    transform: none; }
-    nav.nav-dataviz ul li:hover img, nav.nav-dataviz ul li.active img {
-      background-color: #4B978F; }
-    nav.nav-dataviz ul li img {
-      background-color: #5DBCB3; }
-    nav.nav-dataviz ul li span {
-      text-shadow: none; }
-
 p {
   font-size: 16px;
   line-height: 26px; }
@@ -1219,10 +1170,41 @@ p {
     line-height: 20px; }
 
 footer {
-  background-color: #353535;
-  color: #FFF;
+  border-top: 1px solid #000;
+  bottom: 0;
+  color: #505050;
   padding: 20px 0 10px;
-  z-index: 5; }
+  position: absolute;
+  width: 100%; }
+  footer .inner {
+    display: flex;
+    flex-flow: row;
+    margin: 0 auto;
+    width: 800px; }
+    footer .inner .left {
+      width: 60%; }
+    footer .inner .right {
+      padding-top: 15px;
+      text-align: right;
+      width: 40%; }
+    footer .inner p {
+      font-size: 12px;
+      line-height: 22px; }
+    footer .inner .key-figure {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 24px;
+      margin-bottom: 20px; }
+      footer .inner .key-figure span {
+        display: block;
+        font-size: 14px;
+        font-weight: 600; }
+    footer .inner .footer-logos {
+      align-items: center;
+      display: flex;
+      margin: 30px 0 20px; }
+      footer .inner .footer-logos img {
+        margin-right: 50px; }
 
 .btn-dataviz,
 .btn-story {
@@ -1256,29 +1238,25 @@ footer {
 
 .btn-story {
   left: 20px;
-  right: auto; }
+  right: auto;
+  top: 20px; }
   .btn-story .arrow {
     background-position: left center;
     margin: 0 5px 0 0;
     transform: rotate(-180deg); }
 
-.tooltip {
-  max-width: 250px;
-  border-style: solid;
-  border-width: 1px;
-  background-color: white;
-  color: black;
-  padding: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); }
+.btn-dataviz {
+  transform: translateX(0);
+  transition: transform 2s ease; }
+  .btn-dataviz.animate {
+    animation: btnAnim 5s ease-in-out infinite; }
 
 .scroll-arrow {
-  animation: scroll 5s ease-in-out infinite;
+  animation: arrowAnim 5s ease-in-out infinite;
   bottom: 20px;
   color: #FFF;
   left: 50%;
-  margin: 0;
+  margin: 0 0 0 -15px;
   position: absolute;
   text-align: center;
   transform: translateX(-50%);
@@ -1288,11 +1266,23 @@ footer {
   display: inline-block;
   animation: blink 5s ease-in-out infinite; }
 
-@keyframes scroll {
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; }
+  50% {
+    opacity: 0.4; } }
+
+@keyframes arrowAnim {
   0%, 100% {
     transform: translateY(1rem); }
   50% {
     transform: translateY(-1rem); } }
+
+@keyframes btnAnim {
+  0%, 100% {
+    transform: translateX(1rem); }
+  50% {
+    transform: translateX(-1rem); } }
 
 .logos img {
   margin-right: 40px;
@@ -1310,7 +1300,7 @@ footer {
     width: 100%; }
     .story-container .pin-item .item {
       transition: opacity 1s ease; }
-      .story-container .pin-item .item.item-8 div {
+      .story-container .pin-item .item.item-7 div {
         background-color: #EFE4CE; }
       .story-container .pin-item .item img,
       .story-container .pin-item .item div {
@@ -1324,6 +1314,7 @@ footer {
         width: 100%; }
 
 .section {
+  border: 1px solid black;
   color: #FFF;
   height: auto;
   min-height: 100vh;
@@ -1331,14 +1322,24 @@ footer {
   z-index: 2; }
   .section[data-section="1"] {
     height: 150vh; }
+  .section.conclusion {
+    color: #000;
+    padding-top: 10px; }
+    .section.conclusion > p {
+      margin: 0 auto;
+      padding: 10px 0;
+      width: 800px; }
   .section .box {
     height: 100vh; }
-    .section .box p {
+    .section .box .box-inner {
       background-color: rgba(255, 255, 255, 0.75);
       color: #000;
       margin: 0 auto;
-      padding: 20px;
+      padding: 10px 0;
       width: 660px; }
+      .section .box .box-inner p {
+        margin: 0;
+        padding: 10px 20px; }
   .section .intro {
     color: #FFF;
     height: auto;
@@ -1420,22 +1421,34 @@ footer {
     width: 100%; }
 
 @media only screen and (max-width: 767px) {
-  nav {
-    width: 100%; }
-    nav ul li {
-      padding: 0 11px; }
-      nav ul li span {
-        white-space: normal; }
   h1 {
     font-size: 40px;
     line-height: 55px; }
+  footer {
+    bottom: auto;
+    margin-top: 20px;
+    position: relative; }
+    footer .inner {
+      flex-flow: column-reverse;
+      padding: 0 20px;
+      width: 100%; }
+      footer .inner .left,
+      footer .inner .right {
+        width: 100%; }
+      footer .inner .right {
+        text-align: left; }
+      footer .inner .footer-logos a img:first-child {
+        height: auto;
+        width: 125px; }
   .section {
     padding: 0 20px; }
     .section .intro {
       padding: 0 20px; }
       .section .intro p {
         width: 100%; }
-    .section .box p {
+    .section .box .box-inner {
+      width: 100%; }
+    .section.conclusion > p {
       width: 100%; }
   .dial {
     width: 100%; }

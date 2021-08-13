@@ -1734,6 +1734,7 @@ $( document ).ready(function() {
         triggerHook: 0.9
       })
       .on('enter', function(e) {
+        $('.btn-dataviz').removeClass('animate');
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id;
         setNav(currentSection);
@@ -1747,10 +1748,20 @@ $( document ).ready(function() {
         setSection(currentSection, 1);
         setDial(currentSection, 'leave');
       })
-      // .on('progress', function(e) {
-      //   console.log('progress',e.progress)
+      //.addIndicators()
+      .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: sections[i],
+        offset: $(sections[i]).height() * 0.4
+      })
+      //.setTween(exit)
+      .on('enter', function(e) {
+        $('.btn-dataviz').addClass('animate');
+      })
+      // .addIndicators({
+      //   name: "Exit Timeline"
       // })
-      // .addIndicators()
       .addTo(controller);
     }
   }
@@ -1767,7 +1778,7 @@ $( document ).ready(function() {
     // $('nav ul li:nth-child('+id).addClass('active');
 
     //set dataviz nav
-    if (id>1 && id<=6) {
+    if (id>2 && id<=6) {
       $('.btn-dataviz').addClass('active');
       //set light/dark variation
       if (id>=4)
