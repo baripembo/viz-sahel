@@ -1,4 +1,66 @@
 window.$ = window.jQuery = require('jquery');
+$( document ).ready(function() {
+	d3.csv('../data/disastersByTypeDecadeSahelSummary.csv', function(data) {
+		let array = new Array();
+		array.push(data);
+		let disasterByDecadeType = d3.group(array, d => d.decade, d => d.disaster_type);
+		console.log(disasterByDecadeType.get('Drought'));
+	});
+	var ctx = document.getElementById('droughtsFloodsByDecade').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s'],
+			datasets: [
+				{
+					label: 'Drought',
+					data: [1875000, 842000, 11950000, 5479690, 18709558, 21168228, 13400000],
+					backgroundColor: ['#F2645A']
+				},
+				{
+					label: 'Flood',
+					data: [0, 16900, 495029, 1243487, 1705765, 14199403, 978724],
+					backgroundColor: ['#79AFE7']
+				}
+			]
+		},
+		options: {
+			scales: {
+        x: {
+          grid: {
+            drawOnChartArea: false,
+            drawBorder: false,
+            display: false
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Number of People Affected'
+          },
+          ticks: {
+          	callback: function(value, index, values) {
+              return d3.format('.2s')(value);
+            }
+          },
+          grid: {
+            drawBorder: false
+          } 
+        }
+			},
+			plugins: {
+				legend: {
+					position: 'right',
+					align: 'start',
+					labels: {
+						boxWidth: 15,
+						boxHeight: 15
+					}
+				}
+			}
+		}
+	});
+});
 
 /*! jQuery UI - v1.12.1 - 2021-07-28
 * http://jqueryui.com
@@ -1687,16 +1749,6 @@ $( document ).ready(function() {
       }, 500, 'easeOutQuart');
     });
 
-    //story nav events 
-    // $('.nav-story li').on('click', function() {
-    //   var id = $(this).attr('data-id');
-    //   var target = $('#'+id);
-    //   var top = target.offset().top - $(window).height()/2 + target.find('.box:first-child p').height()/2;
-    //   $('html, body').animate({
-    //     scrollTop: top
-    //   }, 1000, 'easeOutQuad');
-    // });
-
     initSections();
   }
 
@@ -1767,16 +1819,6 @@ $( document ).ready(function() {
   }
 
   function setNav(id) {
-    //set main nav
-    // if (id>0 && id<6) {
-    //   $('.nav-story').show();
-    // }
-    // else {
-    //   $('.nav-story').hide();
-    // }
-    // $('nav li').removeClass('active');
-    // $('nav ul li:nth-child('+id).addClass('active');
-
     //set dataviz nav
     if (id>2 && id<=6) {
       $('.btn-dataviz').addClass('active');
@@ -1839,9 +1881,6 @@ $( document ).ready(function() {
     let id = Number(currentSection)-1
     $('.dataviz-container').find('.dataviz').hide();
     $('.dataviz-container').find('.dataviz-'+id).show();
-    // if (id>1) {
-    //   $('.nav-dataviz').show();
-    // }
   }
 
   function initTracking() {

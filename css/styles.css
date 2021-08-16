@@ -1140,18 +1140,27 @@ h1 {
   margin-top: 0; }
 
 h2 {
-  font-family: 'Source Sans Pro', serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 25px;
   margin: 0 0 8px; }
 
 h3 {
-  font-family: 'Source Sans Pro', serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 21px;
   margin: 0 0 8px; }
+
+blockquote {
+  font-size: 37px;
+  font-weight: 600;
+  line-height: 45px;
+  margin: 20px 0;
+  text-align: center; }
+
+figcaption {
+  margin-bottom: 40px;
+  text-align: center; }
 
 a,
 a:visited {
@@ -1170,11 +1179,10 @@ p {
     line-height: 20px; }
 
 footer {
-  border-top: 1px solid #000;
-  bottom: 0;
+  border-top: 1px solid #888;
   color: #505050;
-  padding: 20px 0 10px;
-  position: absolute;
+  margin-top: 40px;
+  padding: 10px 0 10px;
   width: 100%; }
   footer .inner {
     display: flex;
@@ -1204,7 +1212,7 @@ footer {
       display: flex;
       margin: 30px 0 20px; }
       footer .inner .footer-logos img {
-        margin-right: 50px; }
+        margin-left: 30px; }
 
 .btn-dataviz,
 .btn-story {
@@ -1316,13 +1324,17 @@ footer {
 .section {
   color: #FFF;
   height: auto;
-  min-height: 100vh;
+  min-height: 125vh;
   position: relative;
   z-index: 2; }
+  .section .section-inner {
+    margin: 0 auto;
+    width: 800px; }
   .section[data-section="1"] {
     height: 150vh; }
   .section.conclusion {
     color: #000;
+    min-height: 100vh;
     padding-top: 10px; }
     .section.conclusion > p {
       margin: 0 auto;
@@ -1377,7 +1389,7 @@ footer {
   z-index: 6; }
   .dataviz-container .dataviz {
     margin: 0 auto;
-    width: 800px; }
+    width: 900px; }
     .dataviz-container .dataviz p {
       margin: 0 auto;
       padding: 20px 0;
@@ -1390,10 +1402,16 @@ footer {
       height: 100%;
       min-height: 500px;
       width: 100%; }
-    .dataviz-container .dataviz .container {
+    .dataviz-container .dataviz .layout-container {
       padding: 50px 0; }
     .dataviz-container .dataviz.dataviz-3 iframe {
-      height: 700px; }
+      background-color: #FFF;
+      height: 670px;
+      padding: 10px 0 0 10px; }
+    .dataviz-container .dataviz.dataviz-3 canvas {
+      margin-top: 20px; }
+    .dataviz-container .dataviz.dataviz-3 .single-layout {
+      width: 50%; }
     .dataviz-container .dataviz.dataviz-5 iframe {
       height: 650px; }
 
@@ -1425,7 +1443,6 @@ footer {
     line-height: 55px; }
   footer {
     bottom: auto;
-    margin-top: 20px;
     position: relative; }
     footer .inner {
       flex-flow: column-reverse;
@@ -1441,6 +1458,8 @@ footer {
         width: 125px; }
   .section {
     padding: 0 20px; }
+    .section .section-inner {
+      width: 100%; }
     .section .intro {
       padding: 0 20px; }
       .section .intro p {
