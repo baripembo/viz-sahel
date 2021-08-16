@@ -35,16 +35,6 @@ $( document ).ready(function() {
       }, 500, 'easeOutQuart');
     });
 
-    //story nav events 
-    // $('.nav-story li').on('click', function() {
-    //   var id = $(this).attr('data-id');
-    //   var target = $('#'+id);
-    //   var top = target.offset().top - $(window).height()/2 + target.find('.box:first-child p').height()/2;
-    //   $('html, body').animate({
-    //     scrollTop: top
-    //   }, 1000, 'easeOutQuad');
-    // });
-
     initSections();
   }
 
@@ -115,16 +105,6 @@ $( document ).ready(function() {
   }
 
   function setNav(id) {
-    //set main nav
-    // if (id>0 && id<6) {
-    //   $('.nav-story').show();
-    // }
-    // else {
-    //   $('.nav-story').hide();
-    // }
-    // $('nav li').removeClass('active');
-    // $('nav ul li:nth-child('+id).addClass('active');
-
     //set dataviz nav
     if (id>2 && id<=6) {
       $('.btn-dataviz').addClass('active');
@@ -187,9 +167,6 @@ $( document ).ready(function() {
     let id = Number(currentSection)-1
     $('.dataviz-container').find('.dataviz').hide();
     $('.dataviz-container').find('.dataviz-'+id).show();
-    // if (id>1) {
-    //   $('.nav-dataviz').show();
-    // }
   }
 
   function initTracking() {

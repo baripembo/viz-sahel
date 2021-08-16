@@ -1,0 +1,30 @@
+decade,disaster_type,total_events,total_deaths,total_affected
+1960,Drought,6,0,1875000
+1970,Drought,3,0,842000
+1970,Flood,2,0,16900
+1970,Storm,2,113,100
+1980,Drought,7,3000,11950000
+1980,Flood,11,229,495029
+1980,Insect infestation,15,0,0
+1980,Landslide,1,0,1500
+1980,Storm,1,11,1200
+1980,Volcanic activity,2,1783,10437
+1990,Drought,9,0,5479690
+1990,Extreme temperature,1,18,0
+1990,Flood,22,314,1243487
+1990,Insect infestation,1,0,0
+1990,Storm,1,100,0
+1990,Volcanic activity,1,0,3010
+2000,Drought,11,0,18709558
+2000,Extreme temperature,1,60,0
+2000,Flood,65,925,1705765
+2000,Insect infestation,5,0,0
+2000,Landslide,3,52,400
+2000,Storm,3,18,2398
+2010,Animal accident,1,12,5
+2010,Drought,10,0,21168228
+2010,Flood,60,1687,14199403
+2010,Landslide,2,106,37
+2010,Storm,3,54,16012
+2020,Drought,3,0,13400000
+2020,Flood,11,288,978724

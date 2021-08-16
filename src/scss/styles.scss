@@ -34,7 +34,6 @@ h1 {
 }
 
 h2 {
-	font-family: 'Source Sans Pro', serif;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 25px;
@@ -42,11 +41,23 @@ h2 {
 }
 
 h3 {
-	font-family: 'Source Sans Pro', serif;
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 21px;
 	margin: 0 0 8px;
+}
+
+blockquote {
+	font-size: 37px;
+	font-weight: 600;
+	line-height: 45px;
+	margin: 20px 0;
+	text-align: center;
+}
+
+figcaption {
+	margin-bottom: 40px;
+	text-align: center;
 }
 
 a,
@@ -138,11 +149,12 @@ p {
 }
 
 footer {
-	border-top: 1px solid #000;
-	bottom: 0;
+	border-top: 1px solid #888;
+	//bottom: 0;
 	color: #505050;
-	padding: 20px 0 10px;
-	position: absolute;
+	margin-top: 40px;
+	padding: 10px 0 10px;
+	//position: absolute;
 	width: 100%;
 	.inner {
 		display: flex;
@@ -177,7 +189,7 @@ footer {
 			display: flex;
 			margin: 30px 0 20px;
 			img {
-				margin-right: 50px;
+				margin-left: 30px;
 			}
 		}
 	}
@@ -316,17 +328,21 @@ footer {
 	}
 }
 .section {
-	border: 1px solid black;
 	color: #FFF;
 	height: auto;
-	min-height: 100vh;
+	min-height: 125vh;
 	position: relative;
 	z-index: 2;
+	.section-inner {
+		margin: 0 auto;
+		width: 800px;
+	}
 	&[data-section="1"] {
 		height: 150vh;
 	}
 	&.conclusion {
 		color: #000;
+		min-height: 100vh;
 		padding-top: 10px;
 		> p {
 			margin: 0 auto;
@@ -390,11 +406,11 @@ footer {
 	z-index: 6;
 	.dataviz {
 		margin: 0 auto;
-		max-width: 1082px;
+		width: 900px;
 		p {
 			margin: 0 auto;
-			padding: 50px 0;
-			width: 620px;
+			padding: 20px 0;
+			width: 800px;
 			&.source {
 				padding: 5px 0 36px;
 				width: 100%;
@@ -406,12 +422,20 @@ footer {
 			min-height: 500px;
 			width: 100%;
 		}
-		.container {
+		.layout-container {
 			padding: 50px 0;
 		}
 		&.dataviz-3 {
 			iframe {
-				height: 700px;
+    		background-color: #FFF;
+				height: 670px;
+				padding: 10px 0 0 10px;
+			}
+			canvas {
+				margin-top: 20px;
+			}
+			.single-layout {
+				width: 50%;
 			}
 		}
 		&.dataviz-5 {
@@ -470,7 +494,6 @@ footer {
 	}
 	footer {
 		bottom: auto;
-		margin-top: 20px;
 		position: relative;
 		.inner {
 			flex-flow: column-reverse;
@@ -495,6 +518,9 @@ footer {
 	}
 	.section {
 		padding: 0 20px;
+		.section-inner {
+			width: 100%;
+		}
 		.intro {
 			padding: 0 20px;
 			p {
