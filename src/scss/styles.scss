@@ -425,26 +425,17 @@ footer {
 
 
 @media only screen and (max-width: 767px) {
-	// nav {
-	// 	width: 100%;
-	// 	ul {
-	// 		li {
-	// 			padding: 0 11px;
-	// 			span {
-	// 				white-space: normal;
-	// 			}
-	// 		}
-	// 	}
-	// }
 	h1 {
 		font-size: 40px;
     line-height: 55px;
 	}
+	blockquote {
+		font-size: 29px;
+		line-height: 38px;
+	}
 	footer {
-		bottom: auto;
-		position: relative;
 		.inner {
-			flex-flow: column-reverse;
+			flex-flow: column;
     	padding: 0 20px;
 			width: 100%;
 			.left,
@@ -455,9 +446,11 @@ footer {
 				text-align: left;
 			}
 			.footer-logos {
+				justify-content: space-between;
 				a {
-					img:first-child  {
+					img{
 						height: auto;
+						margin-left: 0;
 						width: 125px;
 					}
 				}
