@@ -121,6 +121,10 @@ $( document ).ready(function() {
 
   function setSection(step, opacity) {
     $('[data-item="'+step+'"]').css('opacity', opacity);
+    if (step==6)
+      $('.credit').hide();
+    else
+      $('.credit').show();
   }
 
   function setDial(step, direction) {

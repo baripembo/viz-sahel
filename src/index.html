@@ -4,7 +4,7 @@
     <meta charset='utf-8' />
     <title>The Climate Crisis in the Sahel</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link rel='icon' type='image/png' href='https://data.humdata.org/images/icons/hdx.ico' />
+    <link rel='icon' type='image/png' href=' https://data.humdata.org/favicon.ico' />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
     <link href='css/styles.css' rel='stylesheet' />
@@ -48,6 +48,7 @@
             <img src='assets/images/1-main.jpeg'/>
           </div>
         </div>
+        <div class='credit'>Photo credit</div>
         <section class='section' data-section='1'>
           <div class='intro'>
             <h1>A Race to Adapt:<br>The Climate Crisis in the Sahel</h1>
@@ -107,12 +108,12 @@
             <p>Follow the links below to add your voice to the global campaign for #TheHumanRace and get inspired by stories of how communities around the world are taking action to adapt to the climate crisis.</p>
             <div class='layout-inner double-layout'>
               <div>
-                Join #TheHumanRace<br><br>
-                <a href='https://www.worldhumanitarianday.org' target='_blank'><img src='assets/join-human-race.png' height="250" /></a>
+                <a href='https://www.worldhumanitarianday.org' target='_blank'><img src='assets/images/join-human-race.png' /></a><br>
+                <span>Join #TheHumanRace</span>
               </div>
               <div>
-                Learn more about how communities on the front lines are racing to adapt.<br>
-                <a href='https://unocha.exposure.co/humans-in-the-climate-crisis' target='_blank'><img src='assets/climate-crisis.png' height="250" /></a>
+                <a href='https://unocha.exposure.co/humans-in-the-climate-crisis' target='_blank'><img src='assets/images/climate-crisis.png' /></a><br>
+                <span>Learn more about how communities on the front lines are racing to adapt.</span>
               </div>
             </div>
           </div>
@@ -170,22 +171,12 @@
       </div>
       <div class='dataviz dataviz-3'>
         <p>Climate-linked disasters have become more frequent and catastrophic in recent years and they are projected to get worse. In the 2010s, though there were fewer events compared to the 2000s, more people were affected, suggesting that the impacts of individual events have gotten worse.</p>
-        <div class='layout-container single-layout'>
+        <div class='layout-container'>
           <div>
             <h3>Droughts and floods in the Sahel since the 1960s</h3>
-            <canvas id="droughtsFloodsByDecade" width="400" height="250"></canvas>
+            <canvas id="droughtsFloodsByDecade" width='800' height='300'></canvas>
           </div>
         </div>
-        <!-- <div class='layout-container double-layout'>
-          <div>
-            <h3>Droughts and floods in the Sahel since the 1960s</h3>
-            <img src='assets/images/dataviz/floods-droughts-1960s-events.png' />
-          </div>
-          <div>
-            <h3>&nbsp;</h3>
-            <img src='assets/images/dataviz/floods-droughts-1960s-affected.png' />
-          </div>
-        </div> -->
         <p>Since 2008, over 60 million people have been affected by droughts, floods and storms in the Sahel. Some countries are mainly experiencing droughts or floods, while others are dealing with both.</p>
         <div class='layout-container'>
           <h3>The number of people affected by droughts and floods since 2014</h3>
@@ -204,13 +195,6 @@
         </div>
       </div>
       <div class='dataviz dataviz-5'>
-        <!-- <p>The Sahel region has struggled with food insecurity and severe issues of malnutrition; the region has among the highest rates of childhood malnutrition and stunting in the world. Moreover, the IPCC predicts that agricultural yields will fall by 20% per decade by the end of the 21st century in some regions of the Sahel.</p>
-        <p>Declines in crop productivity are linked to rising temperatures and changes in precipitations. In 2020, over 47 million people in the six Sahelien countries are experiencing phase 2 (stressed) food insecurity and nearly 20 million people are experiencing phase 3+ (crisis/emergency) food insecurity. These numbers are projected to increase if no mitigating action is taken.</p>
-        <div class='layout-container'>
-          <h3>Percent population/number of people facing food insecurity in the Sahel (IPC/CH Phases):</h3>
-          <iframe src='https://jhjanicki.github.io/food_insecurity_sahel/'></iframe>
-          <p class='source'><b>Data source:</b> <a href='https://www.fsinplatform.org/global-report-food-crises-2021-acute-food-insecurity-table' target='_blank'>FSIN - Global Report on Food Crises 2021</a></p>
-        </div> -->
         <p>The six Sahelien countries being explored (Burkina Faso, Cameroon, Chad, Mali, Niger and Nigeria) are among the most climate vulnerable countries in the world, though their contributions to climate change are among the lowest (with Nigeria being higher than the others). In addition to experiencing the most extreme effects of climate change, these countries are also the least prepared to deal with its grave and worsening consequences.</p>
         <div class='layout-container'>
           <h3>Climate change vulnerability & readiness and CO2 emissions by country:</h3>
@@ -218,32 +202,7 @@
           <p class='source'><b>Data source:</b> <a href='https://gain.nd.edu/our-work/country-index' target='_blank'>ND-GAIN Country Index</a> (June 2021), <a href='https://data.worldbank.org/indicator/EN.ATM.CO2E.PC' target='_blank'>World Bank: World Development Indicators</a> (2018)</p>
         </div>
       </div>
-      <div class='dataviz dataviz-6'>
-        <!-- <p>More frequent climate shocks can exacerbate existing vulnerabilities and create conditions in which any small shock can lead to humanitarian emergencies. The global poverty rate - the share of the world’s population living on less than $1.90 per day - is 9.3% in 2021. Across the six Sahelian countries, that number averages over 40%, putting them in an already vulnerable position without the additional effects of climate change. Moreover, all six countries are projected to be off track when it comes to halving their poverty by 2030.</p>
-        <div class='layout-container single-layout'>
-          <div>
-            <h3>% population living at or below $1.90 a day (% population living in extreme poverty)</h3>
-            <img src='assets/images/dataviz/percentBelow190.png' />
-            <p class='source'><b>Data source:</b> <a href='http://hdr.undp.org/en/2020-MPI' target='_blank'>UNDP - Global Multidimensional Poverty Index (2020)</a></p>
-          </div>
-        </div> -->
-      </div>
     </div>
-
-<!--     <footer>
-      <div class='logos'>
-        <div class='grid-container'>
-          <div class='col-12'>
-            <a href='https://www.unocha.org' target='_blank'>
-              <img height='30' src='assets/logo-ocha-gray.png'>
-            </a>
-            <a href='https://centre.humdata.org' target='_blank'>
-              <img height='38' src='assets/logo-centre-gray.png'>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer> -->
 
     <!-- start Mixpanel -->
     <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
