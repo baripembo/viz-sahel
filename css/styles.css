@@ -1455,20 +1455,23 @@ footer {
   h1 {
     font-size: 40px;
     line-height: 55px; }
-  footer {
-    bottom: auto;
-    position: relative; }
-    footer .inner {
-      flex-flow: column-reverse;
-      padding: 0 20px;
+  blockquote {
+    font-size: 29px;
+    line-height: 38px; }
+  footer .inner {
+    flex-flow: column;
+    padding: 0 20px;
+    width: 100%; }
+    footer .inner .left,
+    footer .inner .right {
       width: 100%; }
-      footer .inner .left,
-      footer .inner .right {
-        width: 100%; }
-      footer .inner .right {
-        text-align: left; }
-      footer .inner .footer-logos a img:first-child {
+    footer .inner .right {
+      text-align: left; }
+    footer .inner .footer-logos {
+      justify-content: space-between; }
+      footer .inner .footer-logos a img {
         height: auto;
+        margin-left: 0;
         width: 125px; }
   .section {
     padding: 0 20px; }
