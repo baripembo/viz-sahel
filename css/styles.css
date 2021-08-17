@@ -1298,6 +1298,13 @@ footer {
   vertical-align: top;
   width: auto; }
 
+.credit {
+  bottom: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  left: 5px;
+  position: fixed; }
+
 .story-container {
   margin: 0 auto; }
   .story-container .pin-item {
@@ -1340,6 +1347,14 @@ footer {
       margin: 0 auto;
       padding: 10px 0;
       width: 800px; }
+    .section.conclusion .double-layout div {
+      margin-top: 40px; }
+      .section.conclusion .double-layout div a {
+        display: block;
+        text-align: center; }
+      .section.conclusion .double-layout div img {
+        height: 250px;
+        width: auto; }
   .section .box {
     height: 100vh; }
     .section .box .box-inner {
@@ -1405,7 +1420,6 @@ footer {
     .dataviz-container .dataviz .layout-container {
       padding: 50px 0; }
     .dataviz-container .dataviz.dataviz-3 iframe {
-      background-color: #FFF;
       height: 670px;
       padding: 10px 0 0 10px; }
     .dataviz-container .dataviz.dataviz-3 canvas {
