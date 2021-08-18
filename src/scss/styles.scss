@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-	background-color: #EFE4CE;
+	background-color: #FFF;
  	display: flex;
   flex-direction: column;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -60,6 +60,10 @@ figcaption {
 	text-align: center;
 }
 
+sup {
+	font-size: 10px;
+}
+
 a,
 a:visited {
 	color: #79AFE7;
@@ -100,19 +104,8 @@ footer {
 			width: 40%;
 		}
 		p {
-			font-size: 12px;
+			font-size: 14px;
 			line-height: 22px;
-		}
-		.key-figure {
-			font-size: 30px;
-			font-weight: bold;
-			line-height: 24px;
-			margin-bottom: 20px;
-			span {
-				display: block;
-				font-size: 14px;
-				font-weight: 600;
-			}
 		}
 		.footer-logos {
 			align-items: center;
@@ -123,6 +116,15 @@ footer {
 			}
 		}
 	}
+	.footnote-sources {
+		font-size: 10px;
+		line-height: 10px;
+		margin: 0 auto;
+		width: 800px;
+		sup {
+			font-size: 8px;
+		}
+	}
 }
 
 .btn-dataviz,
@@ -130,14 +132,8 @@ footer {
 	align-items: center;
 	color: #000;
   cursor: pointer;
-  display: none;
   flex-flow: row;
   font-size: 14px;
-  left: auto;
-	position: fixed;
-  right: 20px;
-  top: 50%;
-  z-index: 5;
   .arrow {
 		background: no-repeat url('../assets/icons/arrow_black.svg');
     display: inline-block;
@@ -145,20 +141,18 @@ footer {
     margin: 0 0 0 5px;
 		width: 30px;
   }
+  &:hover {
+  	text-decoration: underline;
+  }
   &.active {
   	display: flex;
-  }
-  &.light {
-		color: #FFF;
-	  .arrow {
-			background: no-repeat url('../assets/icons/arrow_white.svg');
-		}
   }
 }
 
 .btn-story {
+	display: none;
 	left: 20px;
-	right: auto;
+	position: fixed;
 	top: 20px;
   .arrow {
 		background-position: left center;
@@ -168,11 +162,8 @@ footer {
 }
 
 .btn-dataviz {
-	transform: translateX(0);
-	transition: transform 2s ease;
-	&.animate {
-		animation: btnAnim 5s ease-in-out infinite;
-	}
+  margin: 10px 15px;
+	text-align: right;
 }
 
 .scroll-arrow {
@@ -207,15 +198,6 @@ footer {
 	}
 	50% {
 		transform: translateY(-1rem);
-	}
-}
-
-@keyframes btnAnim {
-	0%, 100% {
-		transform: translateX(1rem);
-	}
-	50% {
-		transform: translateX(-1rem);
 	}
 }
 
@@ -289,14 +271,6 @@ footer {
 		}
 		.double-layout div {
 			margin-top: 40px;
-			a {
-				display: block;
-				text-align: center;
-			}
-			img {
-				height: 250px;
-				width: auto;
-			}
 		}
 	}
 	.box {
@@ -332,7 +306,7 @@ footer {
 .dial {
 	bottom: -710px;
 	left: 50%;
-	opacity: 0;
+	opacity: 1;
 	position: fixed;
 	transform-origin: 0% 50%;
 	transform: rotate(0deg) translateX(-50%);
@@ -345,7 +319,7 @@ footer {
 }
 
 .dataviz-container {
-	background-color: #EEE;
+	background-color: #FFF;
 	bottom: 0;
 	overflow-y: auto;
 	position: fixed;
@@ -442,9 +416,6 @@ footer {
 			.right {
 				width: 100%;
 			}
-			.right {
-				text-align: left;
-			}
 			.footer-logos {
 				justify-content: space-between;
 				a {
@@ -455,6 +426,10 @@ footer {
 					}
 				}
 			}
+		}
+		.footnote-sources {
+    	padding: 0 20px;
+			width: 100%;
 		}
 	}
 	.section {

@@ -11,26 +11,26 @@ $( document ).ready(function() {
 			labels: ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s'],
 			datasets: [
 				{
-					backgroundColor: '#EEE',
+					backgroundColor: '#FFF',
 					borderColor: '#007CE1',
 					borderWidth: 1,
 					data: [6, 3, 7, 9, 11, 10, 3],
 					fill: false,
 					label: 'Drought Events',
-					pointBackgroundColor: '#EEE',
+					pointBackgroundColor: '#FFF',
           pointRadius: 4,
           tension: 0,
 					type: 'line',
       		yAxisID: 'y1'
 				},
 				{
-					backgroundColor: '#EEE',
+					backgroundColor: '#FFF',
 					borderColor: '#F2645A',
 					borderWidth: 1,
 					data: [0, 2, 11, 22, 65, 60, 11],
 					fill: false,
 					label: 'Flood Events',
-					pointBackgroundColor: '#EEE',
+					pointBackgroundColor: '#FFF',
           pointRadius: 4,
           tension: 0,
 					type: 'line',
@@ -89,8 +89,7 @@ $( document ).ready(function() {
 			plugins: {
 				legend: {
 					fillStyle: 'transparent',
-					position: 'right',
-					align: 'start',
+					position: 'bottom',
 					labels: {
 						boxWidth: 15,
 						boxHeight: 15
