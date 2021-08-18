@@ -35,8 +35,6 @@ $( document ).ready(function() {
         left: '100vw'
       }, 500, 'easeOutQuart');
     });
-
-    initSections();
   }
 
   function preload(imgArray) {
@@ -54,10 +52,14 @@ $( document ).ready(function() {
   }
 
   function loadComplete() {
+    initDial();
+    initSections();
+
     $('.loader').hide();
     $('main').css('opacity', 1);
+  }
 
-    //init dial
+  function initDial() {
     dialHeight = $('.dial').height();
     dialWidth = viewportWidth>=768 ? 800 : viewportWidth*1.2;
   }
