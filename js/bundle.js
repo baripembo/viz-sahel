@@ -12,26 +12,26 @@ $( document ).ready(function() {
 			labels: ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s'],
 			datasets: [
 				{
-					backgroundColor: '#EEE',
+					backgroundColor: '#FFF',
 					borderColor: '#007CE1',
 					borderWidth: 1,
 					data: [6, 3, 7, 9, 11, 10, 3],
 					fill: false,
 					label: 'Drought Events',
-					pointBackgroundColor: '#EEE',
+					pointBackgroundColor: '#FFF',
           pointRadius: 4,
           tension: 0,
 					type: 'line',
       		yAxisID: 'y1'
 				},
 				{
-					backgroundColor: '#EEE',
+					backgroundColor: '#FFF',
 					borderColor: '#F2645A',
 					borderWidth: 1,
 					data: [0, 2, 11, 22, 65, 60, 11],
 					fill: false,
 					label: 'Flood Events',
-					pointBackgroundColor: '#EEE',
+					pointBackgroundColor: '#FFF',
           pointRadius: 4,
           tension: 0,
 					type: 'line',
@@ -90,8 +90,7 @@ $( document ).ready(function() {
 			plugins: {
 				legend: {
 					fillStyle: 'transparent',
-					position: 'right',
-					align: 'start',
+					position: 'bottom',
 					labels: {
 						boxWidth: 15,
 						boxHeight: 15
@@ -1755,8 +1754,9 @@ var effect = $.effects;
 $( document ).ready(function() {
   let viewportWidth = $(window).width()
   let currentSection = 1;
-  let dialHeight, dialPos, dialWidth, dialWidthZoom;
+  let dialHeight, dialWidth;
   const rotations = [0, 0, 0, 45, 15, -15, -45];
+  const credits = ['Photo credit','Photo credit','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
 
   function init() {
     //preload images
@@ -1765,7 +1765,7 @@ $( document ).ready(function() {
       'assets/images/home.jpg',
       'assets/images/river.jpg',
       'assets/images/farm.jpg',
-      'assets/images/well.jpg'
+      'assets/images/water.jpg'
     ]);
 
     //btn to dataviz
@@ -1812,9 +1812,7 @@ $( document ).ready(function() {
 
     //init dial
     dialHeight = $('.dial').height();
-    dialPos = dialHeight * 0.74;
-    dialWidth = viewportWidth>=768 ? 660 : viewportWidth;
-    dialWidthZoom = viewportWidth>=768 ? 800 : viewportWidth*1.2;
+    dialWidth = viewportWidth>=768 ? 800 : viewportWidth*1.2;
   }
 
   function initSections() {
@@ -1829,14 +1827,12 @@ $( document ).ready(function() {
         $('.btn-dataviz').removeClass('animate');
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id;
-        setNav(currentSection);
         setSection(currentSection-1, 0);
         setDial(currentSection, 'enter');
       })
       .on('leave', function(e) {
         var id = Number($(e.target.triggerElement()).data('section'));
         currentSection = id-1;
-        setNav(currentSection);
         setSection(currentSection, 1);
         setDial(currentSection, 'leave');
       })
@@ -1858,23 +1854,11 @@ $( document ).ready(function() {
     }
   }
 
-  function setNav(id) {
-    //set dataviz nav
-    if (id>2 && id<=6) {
-      $('.btn-dataviz').addClass('active');
-      //set light/dark variation
-      if (id>=4)
-        $('.btn-dataviz').addClass('light');
-      else
-        $('.btn-dataviz').removeClass('light');
-    }
-    else {
-      $('.btn-dataviz').removeClass('active');
-    }
-  }
-
   function setSection(step, opacity) {
     $('[data-item="'+step+'"]').css('opacity', opacity);
+
+    //set photo credit
+    $('.credit').html(credits[step]);
     if (step==6)
       $('.credit').hide();
     else
@@ -1883,42 +1867,24 @@ $( document ).ready(function() {
 
   function setDial(step, direction) {
     $('.dial').clearQueue();
-    if (step>1 && step<7) {
-      if (step==2) {
-        if (direction=='leave') {
-          rotateDial(0, 0);
-        }
-        $('.dial').animate({
-          bottom: -dialPos,
-          opacity: 1,
-          width: dialWidth
-        }, 1000, 'easeOutQuart');
-      }
-      else if (step==3 || (step==6 && direction=='leave')) {
+    if (step>2 && step<7) {
+      if (step==3 || (step==6 && direction=='leave')) {
         $('.dial').animate({
           bottom: -dialHeight,
-          opacity: 1,
-          width: dialWidthZoom
+          width: dialWidth
         }, 1000, 'easeInOutQuart');
-        rotateDial(rotations[step], 750);
       }
-      else {
-        rotateDial(rotations[step], 0);
-      }
+      rotateDial(rotations[step]);
     }
     else {
       $('.dial').animate({
-        bottom: -dialHeight,
-        opacity: 0,
-        width: dialWidth
-      }, 750, 'easeOutQuart', function() {
-        rotateDial(0, 0);
-      });
+        bottom: -(dialWidth + 100),
+      }, 750, 'easeOutQuart');
     }
   }
 
-  function rotateDial(deg, delay) {
-    $('.dial').delay(delay).css('transform', 'rotate('+deg+'deg) translateX(-50%)');
+  function rotateDial(deg) {
+    $('.dial').css('transform', 'rotate('+deg+'deg) translateX(-50%)');
   }
 
   function showDataviz() {

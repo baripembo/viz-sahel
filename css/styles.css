@@ -1124,7 +1124,7 @@ html, body {
   height: 100%; }
 
 body {
-  background-color: #EFE4CE;
+  background-color: #FFF;
   display: flex;
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
@@ -1162,6 +1162,9 @@ figcaption {
   margin-bottom: 40px;
   text-align: center; }
 
+sup {
+  font-size: 10px; }
+
 a,
 a:visited {
   color: #79AFE7; }
@@ -1196,37 +1199,29 @@ footer {
       text-align: right;
       width: 40%; }
     footer .inner p {
-      font-size: 12px;
+      font-size: 14px;
       line-height: 22px; }
-    footer .inner .key-figure {
-      font-size: 30px;
-      font-weight: bold;
-      line-height: 24px;
-      margin-bottom: 20px; }
-      footer .inner .key-figure span {
-        display: block;
-        font-size: 14px;
-        font-weight: 600; }
     footer .inner .footer-logos {
       align-items: center;
       display: flex;
       margin: 30px 0 20px; }
       footer .inner .footer-logos img {
         margin-left: 30px; }
+  footer .footnote-sources {
+    font-size: 10px;
+    line-height: 10px;
+    margin: 0 auto;
+    width: 800px; }
+    footer .footnote-sources sup {
+      font-size: 8px; }
 
 .btn-dataviz,
 .btn-story {
   align-items: center;
   color: #000;
   cursor: pointer;
-  display: none;
   flex-flow: row;
-  font-size: 14px;
-  left: auto;
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  z-index: 5; }
+  font-size: 14px; }
   .btn-dataviz .arrow,
   .btn-story .arrow {
     background: no-repeat url("../assets/icons/arrow_black.svg");
@@ -1234,19 +1229,17 @@ footer {
     height: 10px;
     margin: 0 0 0 5px;
     width: 30px; }
+  .btn-dataviz:hover,
+  .btn-story:hover {
+    text-decoration: underline; }
   .btn-dataviz.active,
   .btn-story.active {
     display: flex; }
-  .btn-dataviz.light,
-  .btn-story.light {
-    color: #FFF; }
-    .btn-dataviz.light .arrow,
-    .btn-story.light .arrow {
-      background: no-repeat url("../assets/icons/arrow_white.svg"); }
 
 .btn-story {
+  display: none;
   left: 20px;
-  right: auto;
+  position: fixed;
   top: 20px; }
   .btn-story .arrow {
     background-position: left center;
@@ -1254,10 +1247,8 @@ footer {
     transform: rotate(-180deg); }
 
 .btn-dataviz {
-  transform: translateX(0);
-  transition: transform 2s ease; }
-  .btn-dataviz.animate {
-    animation: btnAnim 5s ease-in-out infinite; }
+  margin: 10px 15px;
+  text-align: right; }
 
 .scroll-arrow {
   animation: arrowAnim 5s ease-in-out infinite;
@@ -1285,12 +1276,6 @@ footer {
     transform: translateY(1rem); }
   50% {
     transform: translateY(-1rem); } }
-
-@keyframes btnAnim {
-  0%, 100% {
-    transform: translateX(1rem); }
-  50% {
-    transform: translateX(-1rem); } }
 
 .logos img {
   margin-right: 40px;
@@ -1349,12 +1334,6 @@ footer {
       width: 800px; }
     .section.conclusion .double-layout div {
       margin-top: 40px; }
-      .section.conclusion .double-layout div a {
-        display: block;
-        text-align: center; }
-      .section.conclusion .double-layout div img {
-        height: 250px;
-        width: auto; }
   .section .box {
     height: 100vh; }
     .section .box .box-inner {
@@ -1383,7 +1362,7 @@ footer {
 .dial {
   bottom: -710px;
   left: 50%;
-  opacity: 0;
+  opacity: 1;
   position: fixed;
   transform-origin: 0% 50%;
   transform: rotate(0deg) translateX(-50%);
@@ -1394,7 +1373,7 @@ footer {
     width: 100%; }
 
 .dataviz-container {
-  background-color: #EEE;
+  background-color: #FFF;
   bottom: 0;
   overflow-y: auto;
   position: fixed;
@@ -1465,14 +1444,15 @@ footer {
     footer .inner .left,
     footer .inner .right {
       width: 100%; }
-    footer .inner .right {
-      text-align: left; }
     footer .inner .footer-logos {
       justify-content: space-between; }
       footer .inner .footer-logos a img {
         height: auto;
         margin-left: 0;
         width: 125px; }
+  footer .footnote-sources {
+    padding: 0 20px;
+    width: 100%; }
   .section {
     padding: 0 20px; }
     .section .section-inner {
