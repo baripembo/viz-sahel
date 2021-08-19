@@ -102,27 +102,111 @@ $( document ).ready(function() {
 });
 
 $( document ).ready(function() {
-	// d3.csv('../data/cadre_harmonise.csv', function(data) {
-	// 	let array = new Array();
-	// 	array.push(data);
-	// 	//let disasterByDecadeType = d3.group(array, d => d.decade, d => d.disaster_type);
-	// 	console.log(data);
-	// });
+  let dataArray = [];
+  let exerciseArray = [];
+  let ipcChart;
+
+  d3.csv('../data/ipc.csv').then(function(data) {
+    let group = d3.group(data, d => d.exercise_label + ' ' + d.exercise_year, d => d.adm0_name);
+    Array.from(group, ([key, values]) => {
+  		exerciseArray.push(key);
+
+  		let labels = Array.from(values.keys());
+	    let phase3 = [];
+	    let phase4 = [];
+	    let phase5 = [];
+    	Array.from(values, ([k, vals]) => {
+  			let p3 = d3.rollup(vals, v => d3.sum(v, d => d.phase3), d => d.adm0_name);
+  			let p4 = d3.rollup(vals, v => d3.sum(v, d => d.phase4), d => d.adm0_name);
+  			let p5 = d3.rollup(vals, v => d3.sum(v, d => d.phase5), d => d.adm0_name);
+  			phase3.push(p3.get(k));
+  			phase4.push(p4.get(k));
+  			phase5.push(p5.get(k));
+    	});
+    	dataArray.push({p3: phase3, p4: phase4, p5: phase5, labels: labels});
+    });
 
 
+  	var ipcExerciseSelect = d3.select('.ipc-exercise-select')
+      .selectAll('option')
+      .data(exerciseArray)
+      .enter().append('option')
+        .text(function(d) { return d; })
+        .attr('value', function (d, i) { return i; });
 
-      d3.csv('../data/cadre_harmonise.csv').then(function(data) {
-      console.log('Data loaded', data);
-      let group = d3.group(data, d => d.exercise_label + ' ' + d.exercise_year, d => d.adm0_name);
+    //ipc exercise select event
+	  d3.select('.ipc-exercise-select').on('change',function(e) {
+	    var selected = d3.select('.ipc-exercise-select').node().value;
+    	updateChart(dataArray[selected]);
+	  });
 
-      // let dataByCountry = d3.nest()
-      //   .key(function(d) { return d.adm0_name; })
-      //   .object(data[0]);
+    buildChart(dataArray[0]);
+  });
 
+  function updateChart(data) {
+  	ipcChart.data.labels = data.labels;
+    ipcChart.data.datasets[0].data = data.p3;
+    ipcChart.data.datasets[1].data = data.p4;
+    ipcChart.data.datasets[2].data = data.p5;
+    ipcChart.update();
+  }
 
-      console.log(group)
-    }
-  );
+  function buildChart(data) {
+  	var ctx = document.getElementById('ipc').getContext('2d');
+		ipcChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: data.labels,
+				datasets: [
+					{
+						label: 'Crisis',
+						data: data.p3,
+						backgroundColor: '#FF9901'
+					},
+					{
+						label: 'Emergency',
+						data: data.p4,
+						backgroundColor: '#FF0000'
+					},
+					{
+						label: 'Catastrophe/Famine',
+						data: data.p5,
+						backgroundColor: '#C00001'
+					}
+				]
+			},
+			options: {
+	    	responsive: true,
+				scales: {
+	        x: {
+	          stacked: true,
+	          grid: {
+	            drawOnChartArea: false
+	          }
+	        },
+	        y: {
+		        stacked: true,
+	          grid: {
+	          	drawBorder: false,
+	            drawOnChartArea: true
+	          }
+	        }
+				},
+				interaction: {
+					mode: 'point'
+				},
+				plugins: {
+					legend: {
+						position: 'bottom',
+						labels: {
+							boxWidth: 15,
+							boxHeight: 15
+						}
+					}
+				}
+			}
+		});
+  }
 });
 /*! jQuery UI - v1.12.1 - 2021-07-28
 * http://jqueryui.com
