@@ -1779,7 +1779,7 @@ $( document ).ready(function() {
   let currentSection = 1;
   let dialHeight, dialWidth;
   const rotations = [0, 0, 0, 45, 15, -15, -45];
-  const credits = ['Photo credit','Photo credit','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
+  const credits = ['© UNICEF/UNI82205/Holt','Photo credit','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
 
   function init() {
     //preload images
