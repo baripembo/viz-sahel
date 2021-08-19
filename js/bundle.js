@@ -106,7 +106,7 @@ $( document ).ready(function() {
   let exerciseArray = [];
   let ipcChart;
 
-  d3.csv('../data/ipc.csv').then(function(data) {
+  d3.csv('data/ipc.csv').then(function(data) {
     let group = d3.group(data, d => d.exercise_label + ' ' + d.exercise_year, d => d.adm0_name);
     Array.from(group, ([key, values]) => {
   		exerciseArray.push(key);
