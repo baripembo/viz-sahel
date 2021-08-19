@@ -1891,19 +1891,21 @@ $( document ).ready(function() {
   }
 
   function setDial(step, direction) {
-    $('.dial').clearQueue();
     if (step>2 && step<7) {
       if (step==3 || (step==6 && direction=='leave')) {
         $('.dial').animate({
           bottom: -dialHeight,
+          opacity: 1,
           width: dialWidth
         }, 1000, 'easeInOutQuart');
       }
       rotateDial(rotations[step]);
     }
     else {
+      $('.dial').clearQueue();
       $('.dial').animate({
         bottom: -(dialWidth + 100),
+        opacity: 0,
       }, 750, 'easeOutQuart');
     }
   }
