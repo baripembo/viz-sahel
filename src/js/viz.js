@@ -3,7 +3,7 @@ $( document ).ready(function() {
   let currentSection = 1;
   let dialHeight, dialWidth;
   const rotations = [0, 0, 0, 45, 15, -15, -45];
-  const credits = ['Photo credit','Photo credit','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
+  const credits = ['©UNICEF/UNI82205/Holt','Photo credit','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
 
   function init() {
     //preload images
@@ -60,7 +60,7 @@ $( document ).ready(function() {
   }
 
   function initDial() {
-    dialHeight = $('.dial').height();
+    dialHeight = ($('.dial').height()<100) ? 703 : $('.dial').height();
     dialWidth = viewportWidth>=768 ? 800 : viewportWidth*1.2;
   }
 
@@ -115,19 +115,21 @@ $( document ).ready(function() {
   }
 
   function setDial(step, direction) {
-    $('.dial').clearQueue();
     if (step>2 && step<7) {
       if (step==3 || (step==6 && direction=='leave')) {
         $('.dial').animate({
           bottom: -dialHeight,
+          opacity: 1,
           width: dialWidth
         }, 1000, 'easeInOutQuart');
       }
       rotateDial(rotations[step]);
     }
     else {
+      $('.dial').clearQueue();
       $('.dial').animate({
         bottom: -(dialWidth + 100),
+        opacity: 0,
       }, 750, 'easeOutQuart');
     }
   }
