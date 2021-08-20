@@ -1967,7 +1967,7 @@ $( document ).ready(function() {
 
     new ScrollMagic.Scene({
       triggerElement: document.querySelector('#mapZoomTrigger'),
-      triggerHook: 1
+      triggerHook: 0
     })
     .on('enter', function(e) {
       var location = {
