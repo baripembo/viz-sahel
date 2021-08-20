@@ -1865,8 +1865,10 @@ $( document ).ready(function() {
   let viewportWidth = $(window).width()
   let currentSection = 1;
   let dialHeight, dialWidth;
+  let map;
   const rotations = [0, 0, 0, 45, 15, -15, -45];
   const credits = ['©UNICEF/UNI82205/Holt','Photo credit','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
+
 
   function init() {
     //preload images
@@ -1897,6 +1899,17 @@ $( document ).ready(function() {
       $('.dataviz-container').animate({
         left: '100vw'
       }, 500, 'easeOutQuart');
+    });
+
+    //init mapbox
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaHVtZGF0YSIsImEiOiJja2FvMW1wbDIwMzE2MnFwMW9teHQxOXhpIn0.Uri8IURftz3Jv5It51ISAA';
+    map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/humdata/ckfx2jgjd10qx1bnzkla9px41/',
+      center: [15.4723, 12],
+      minZoom: 2,
+      zoom: 3.5,
+      attributionControl: false
     });
   }
 
@@ -1951,6 +1964,31 @@ $( document ).ready(function() {
       //.addIndicators()
       .addTo(controller);
     }
+
+    new ScrollMagic.Scene({
+      triggerElement: document.querySelector('#mapZoomTrigger'),
+      triggerHook: 1
+    })
+    .on('enter', function(e) {
+      var location = {
+        center: [15.4723, 12],
+        zoom: 6,
+        pitch: 100,
+        bearing: 0
+      };
+      map.flyTo(location);
+    })
+    .on('leave', function(e) {
+      var location = {
+        center: [15.4723, 12],
+        zoom: 3.5,
+        pitch: 0,
+        bearing: 0
+      };
+      map.flyTo(location);
+    })
+    //.addIndicators()
+    .addTo(controller);
   }
 
   function setSection(step, opacity) {

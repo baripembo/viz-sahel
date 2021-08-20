@@ -1322,18 +1322,6 @@ footer {
   .section .section-inner {
     margin: 0 auto;
     width: 800px; }
-  .section[data-section="1"] {
-    height: 150vh; }
-  .section.conclusion {
-    color: #000;
-    min-height: 100vh;
-    padding-top: 10px; }
-    .section.conclusion > p {
-      margin: 0 auto;
-      padding: 10px 0;
-      width: 800px; }
-    .section.conclusion .double-layout div {
-      margin-top: 40px; }
   .section .box {
     height: 100vh; }
     .section .box .box-inner {
@@ -1358,6 +1346,22 @@ footer {
       font-weight: 600;
       margin: 0 auto;
       width: 434px; }
+  .section[data-section="1"] {
+    height: 150vh; }
+  .section[data-section="2"] {
+    height: 250vh; }
+    .section[data-section="2"] .box {
+      height: 125vh; }
+  .section.conclusion {
+    color: #000;
+    min-height: 100vh;
+    padding-top: 10px; }
+    .section.conclusion > p {
+      margin: 0 auto;
+      padding: 10px 0;
+      width: 800px; }
+    .section.conclusion .double-layout div {
+      margin-top: 40px; }
 
 .dial {
   bottom: -710px;
@@ -1457,7 +1461,7 @@ select {
     line-height: 38px; }
   footer .inner {
     flex-flow: column;
-    padding: 0 20px;
+    padding: 0;
     width: 100%; }
     footer .inner .left,
     footer .inner .right {
@@ -1469,7 +1473,7 @@ select {
         margin-left: 0;
         width: 125px; }
   footer .footnote-sources {
-    padding: 0 20px;
+    padding: 0;
     width: 100%; }
   .section {
     padding: 0 20px; }
