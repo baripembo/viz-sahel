@@ -127,7 +127,7 @@ $( document ).ready(function() {
     });
 
 
-  	var ipcExerciseSelect = d3.select('.ipc-exercise-select')
+  	var ipcSelect = d3.select('.ipc-select')
       .selectAll('option')
       .data(exerciseArray)
       .enter().append('option')
@@ -135,8 +135,8 @@ $( document ).ready(function() {
         .attr('value', function (d, i) { return i; });
 
     //ipc exercise select event
-	  d3.select('.ipc-exercise-select').on('change',function(e) {
-	    var selected = d3.select('.ipc-exercise-select').node().value;
+	  d3.select('.ipc-select').on('change',function(e) {
+	    var selected = d3.select('.ipc-select').node().value;
     	updateChart(dataArray[selected]);
 	  });
 
@@ -152,7 +152,7 @@ $( document ).ready(function() {
   }
 
   function buildChart(data) {
-  	var ctx = document.getElementById('ipc').getContext('2d');
+  	var ctx = document.getElementById('ipcChart').getContext('2d');
 		ipcChart = new Chart(ctx, {
 			type: 'bar',
 			data: {
@@ -189,6 +189,9 @@ $( document ).ready(function() {
 	          grid: {
 	          	drawBorder: false,
 	            drawOnChartArea: true
+	          },
+	          ticks: {
+        			maxTicksLimit: 6
 	          }
 	        }
 				},
@@ -1920,7 +1923,7 @@ $( document ).ready(function() {
   }
 
   function initDial() {
-    dialHeight = ($('.dial').height()<100) ? 703 : $('.dial').height();
+    dialHeight = ($('.dial').height()<100) ? 703 : $('.dial').height(); //default to 703 height
     dialWidth = viewportWidth>=768 ? 800 : viewportWidth*1.2;
   }
 
@@ -1946,19 +1949,6 @@ $( document ).ready(function() {
         setDial(currentSection, 'leave');
       })
       //.addIndicators()
-      .addTo(controller);
-
-      new ScrollMagic.Scene({
-        triggerElement: sections[i],
-        offset: $(sections[i]).height() * 0.4
-      })
-      //.setTween(exit)
-      .on('enter', function(e) {
-        $('.btn-dataviz').addClass('animate');
-      })
-      // .addIndicators({
-      //   name: "Exit Timeline"
-      // })
       .addTo(controller);
     }
   }
@@ -1999,9 +1989,8 @@ $( document ).ready(function() {
   }
 
   function showDataviz() {
-    let id = Number(currentSection)-1
     $('.dataviz-container').find('.dataviz').hide();
-    $('.dataviz-container').find('.dataviz-'+id).show();
+    $('.dataviz-container').find('.dataviz-'+currentSection).show();
   }
 
   function initTracking() {

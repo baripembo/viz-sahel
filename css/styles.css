@@ -1399,14 +1399,14 @@ footer {
       width: 100%; }
     .dataviz-container .dataviz .layout-container {
       padding: 50px 0; }
-    .dataviz-container .dataviz.dataviz-3 iframe {
+    .dataviz-container .dataviz.dataviz-4 iframe {
       height: 670px;
       padding: 10px 0 0 10px; }
-    .dataviz-container .dataviz.dataviz-3 canvas {
+    .dataviz-container .dataviz.dataviz-4 canvas {
       margin-top: 20px; }
-    .dataviz-container .dataviz.dataviz-3 .single-layout {
+    .dataviz-container .dataviz.dataviz-4 .single-layout {
       width: 50%; }
-    .dataviz-container .dataviz.dataviz-5 iframe {
+    .dataviz-container .dataviz.dataviz-6 iframe {
       height: 650px; }
 
 .double-layout {
@@ -1430,6 +1430,23 @@ footer {
   .single-layout img {
     height: auto;
     width: 100%; }
+
+label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  line-height: 18px; }
+
+select {
+  background-color: #FFF;
+  border-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: normal;
+  height: 30px;
+  margin: 5px 0 30px 4px;
+  padding: 0;
+  width: auto; }
 
 @media only screen and (max-width: 767px) {
   h1 {
@@ -1472,9 +1489,6 @@ footer {
     padding: 90px 20px 0;
     width: 100%; }
     .dataviz-container .dataviz p {
-      width: 100%; }
-    .dataviz-container .dataviz.dataviz-1 iframe {
-      height: 100%;
       width: 100%; }
   .double-layout {
     flex-flow: column; }
