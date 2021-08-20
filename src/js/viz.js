@@ -60,7 +60,7 @@ $( document ).ready(function() {
   }
 
   function initDial() {
-    dialHeight = ($('.dial').height()<100) ? 703 : $('.dial').height();
+    dialHeight = ($('.dial').height()<100) ? 703 : $('.dial').height(); //default to 703 height
     dialWidth = viewportWidth>=768 ? 800 : viewportWidth*1.2;
   }
 
@@ -86,19 +86,6 @@ $( document ).ready(function() {
         setDial(currentSection, 'leave');
       })
       //.addIndicators()
-      .addTo(controller);
-
-      new ScrollMagic.Scene({
-        triggerElement: sections[i],
-        offset: $(sections[i]).height() * 0.4
-      })
-      //.setTween(exit)
-      .on('enter', function(e) {
-        $('.btn-dataviz').addClass('animate');
-      })
-      // .addIndicators({
-      //   name: "Exit Timeline"
-      // })
       .addTo(controller);
     }
   }
@@ -139,9 +126,8 @@ $( document ).ready(function() {
   }
 
   function showDataviz() {
-    let id = Number(currentSection)-1
     $('.dataviz-container').find('.dataviz').hide();
-    $('.dataviz-container').find('.dataviz-'+id).show();
+    $('.dataviz-container').find('.dataviz-'+currentSection).show();
   }
 
   function initTracking() {

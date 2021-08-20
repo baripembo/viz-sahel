@@ -349,7 +349,7 @@ footer {
 		.layout-container {
 			padding: 50px 0;
 		}
-		&.dataviz-3 {
+		&.dataviz-4 {
 			iframe {
 				height: 670px;
 				padding: 10px 0 0 10px;
@@ -361,7 +361,7 @@ footer {
 				width: 50%;
 			}
 		}
-		&.dataviz-5 {
+		&.dataviz-6 {
 			iframe {
 				height: 650px;
 			}
@@ -398,6 +398,24 @@ footer {
 	}
 }
 
+label {
+	font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+select {
+	background-color: #FFF;
+  border-color: #FFF;
+	border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: normal;
+  height: 30px;
+  margin: 5px 0 30px 4px;
+  padding: 0;
+  width: auto;
+}
 
 @media only screen and (max-width: 767px) {
 	h1 {
@@ -411,7 +429,7 @@ footer {
 	footer {
 		.inner {
 			flex-flow: column;
-    	padding: 0 20px;
+    	padding: 0;
 			width: 100%;
 			.left,
 			.right {
@@ -429,7 +447,7 @@ footer {
 			}
 		}
 		.footnote-sources {
-    	padding: 0 20px;
+    	padding: 0;
 			width: 100%;
 		}
 	}
@@ -464,12 +482,6 @@ footer {
     	width: 100%;
     	p {
     		width: 100%;
-    	}
-    	&.dataviz-1 {
-    		iframe {
-    			height: 100%;
-    			width: 100%;
-    		}
     	}
     }
 	}

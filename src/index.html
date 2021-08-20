@@ -6,7 +6,6 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link rel='icon' type='image/png' href=' https://data.humdata.org/favicon.ico' />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
     <link href='css/styles.css' rel='stylesheet' />
   </head>
 
@@ -156,15 +155,7 @@
       <div class='btn-story'>
         <div class='arrow'></div>Back to story
       </div>
-      <div class='dataviz dataviz-1'>
-        <!-- <p>The six Sahelien countries being explored (Burkina Faso, Cameroon, Chad, Mali, Niger and Nigeria) are among the most climate vulnerable countries in the world, though their contributions to climate change are among the lowest (with Nigeria being higher than the others). In addition to experiencing the most extreme effects of climate change, these countries are also the least prepared to deal with its grave and worsening consequences.</p>
-        <div class='container'>
-          <h3>Climate change vulnerability & readiness and CO2 emissions by country:</h3>
-          <iframe src='https://ocha-dap.github.io/climate_change/'></iframe>
-          <p class='source'><b>Data source:</b> <a href='https://gain.nd.edu/our-work/country-index' target='_blank'>ND-GAIN Country Index</a> (June 2021), <a href='https://data.worldbank.org/indicator/EN.ATM.CO2E.PC' target='_blank'>World Bank: World Development Indicators</a> (2018)</p>
-        </div> -->
-      </div>
-      <div class='dataviz dataviz-2'>
+      <div class='dataviz dataviz-3'>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class='layout-container single-layout'>
           <div>
@@ -173,35 +164,35 @@
           </div>
         </div>
       </div>
-      <div class='dataviz dataviz-3'>
+      <div class='dataviz dataviz-4'>
         <p>Climate-linked disasters have become more frequent and catastrophic in recent years and they are projected to get worse. In the 2010s, though there were fewer events compared to the 2000s, more people were affected, suggesting that the impacts of individual events have gotten worse.</p>
         <div class='layout-container'>
           <div>
             <h3>Droughts and floods in the Sahel since the 1960s</h3>
-            <canvas id="droughtsFloodsByDecade" width='800' height='300'></canvas>
+            <canvas id="droughtsFloodsByDecade"></canvas>
           </div>
         </div>
         <p>Since 2008, over 60 million people have been affected by droughts, floods and storms in the Sahel. Some countries are mainly experiencing droughts or floods, while others are dealing with both.</p>
         <div class='layout-container'>
           <h3>The number of people affected by droughts and floods since 2014</h3>
-          <iframe src='https://ocha-dap.github.io/droughts_floods/'></iframe>
+          <iframe src='https://ocha-dap.github.io/droughts_floods/' width='900' height='650'></iframe>
           <p class='source'><b>Data source:</b> <a href='https://data.humdata.org/dataset/emdat-country-profiles' target='_blank'>CRED EM-DAT database</a></p>
         </div>
       </div>
-      <div class='dataviz dataviz-4'>
+      <div class='dataviz dataviz-5'>
         <p>Rapid-onset disasters (i.e. floods) and long-term climate change effects (i.e. desertification) may force people to temporarily or permanently move. Though migration is an important adaptation strategy, it can lead to loss of livelihoods, poverty, conflicts between host and migrant communities, and many more problems.</p> 
         <p>Since 2008, the number of new IDPs in the six countries due to either conflict or disaster is 17.1 million.  Out of the total new displacements, 9.2 million is due to disasters, most of which are climate induced.</p>
         <div class='layout-container single-layout'>
           <div>
-            <label for='ipcExerciseSelect' class='visuallyhidden'>Select an exercise period: </label>
-            <select id='ipcExerciseSelect' class='ipc-exercise-select'></select>
-            <canvas id="ipc" width='800' height='300'></canvas>
-            <!-- <h3>Number of newly displaced people by year due to disasters in the Sahel</h3>
-            <img src='assets/images/dataviz/displacement2014-2020.png' /></div>
-            <p class='source'><b>Data source:</b> <a href='https://www.internal-displacement.org/database/displacement-data' target='_blank'> IDMC - Global Internal Displacement Database: disasters</a></p> -->
+            <h3>Population in IPC 3+</h3>
+            <label for='ipcSelect' class='visuallyhidden'>Select an exercise period:</label>
+            <select id='ipcSelect' class='ipc-select'></select>
+            <canvas id="ipcChart"></canvas>
+            <p class='source'><b>Data source:</b> <a href='https://data.humdata.org/dataset/cadre-harmonise' target='_blank'> Cadre Harmonise</a></p>
+          </div>
         </div>
       </div>
-      <div class='dataviz dataviz-5'>
+      <div class='dataviz dataviz-6'>
         <p>The six Sahelien countries being explored (Burkina Faso, Cameroon, Chad, Mali, Niger and Nigeria) are among the most climate vulnerable countries in the world, though their contributions to climate change are among the lowest (with Nigeria being higher than the others). In addition to experiencing the most extreme effects of climate change, these countries are also the least prepared to deal with its grave and worsening consequences.</p>
         <div class='layout-container'>
           <h3>Climate change vulnerability & readiness and CO2 emissions by country:</h3>

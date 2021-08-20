@@ -3,7 +3,7 @@ $( document ).ready(function() {
   let exerciseArray = [];
   let ipcChart;
 
-  d3.csv('../data/ipc.csv').then(function(data) {
+  d3.csv('data/ipc.csv').then(function(data) {
     let group = d3.group(data, d => d.exercise_label + ' ' + d.exercise_year, d => d.adm0_name);
     Array.from(group, ([key, values]) => {
   		exerciseArray.push(key);
@@ -24,7 +24,7 @@ $( document ).ready(function() {
     });
 
 
-  	var ipcExerciseSelect = d3.select('.ipc-exercise-select')
+  	var ipcSelect = d3.select('.ipc-select')
       .selectAll('option')
       .data(exerciseArray)
       .enter().append('option')
@@ -32,8 +32,8 @@ $( document ).ready(function() {
         .attr('value', function (d, i) { return i; });
 
     //ipc exercise select event
-	  d3.select('.ipc-exercise-select').on('change',function(e) {
-	    var selected = d3.select('.ipc-exercise-select').node().value;
+	  d3.select('.ipc-select').on('change',function(e) {
+	    var selected = d3.select('.ipc-select').node().value;
     	updateChart(dataArray[selected]);
 	  });
 
@@ -49,7 +49,7 @@ $( document ).ready(function() {
   }
 
   function buildChart(data) {
-  	var ctx = document.getElementById('ipc').getContext('2d');
+  	var ctx = document.getElementById('ipcChart').getContext('2d');
 		ipcChart = new Chart(ctx, {
 			type: 'bar',
 			data: {
@@ -86,6 +86,9 @@ $( document ).ready(function() {
 	          grid: {
 	          	drawBorder: false,
 	            drawOnChartArea: true
+	          },
+	          ticks: {
+        			maxTicksLimit: 6
 	          }
 	        }
 				},
