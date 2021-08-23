@@ -2058,7 +2058,7 @@ $( document ).ready(function() {
       'page title': document.title,
       'embedded in': window.location.href,
       'action': 'switch viz',
-      'viz type': 'oad covid-19',
+      'viz type': 'climate change data story',
       'current view': view,
       'content': content
     });
