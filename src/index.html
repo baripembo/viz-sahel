@@ -41,7 +41,8 @@
             <img src='assets/images/home.jpg' />
           </div>
           <div class='item' data-item='2'>
-            <img src='assets/images/intro.jpg' />
+            <!-- <img src='assets/images/intro.jpg' /> -->
+            <div id='map'></div>
           </div>
           <div class='item' data-item='1'>
             <img src='assets/images/1-main.jpeg'/>
@@ -56,7 +57,7 @@
         </section> 
         <section class='section' data-section='2'>
           <div class='box'>
-            <div class='box-inner'>
+            <div class='box-inner' id='mapZoomTrigger'>
               <p>The Central Sahel and Lake Chad Basin, a sub-region in West and Central Africa that includes six countries, is at the frontline of the global climate crisis. Temperatures have increased significantly in recent decades and are projected to rise another 3-6 degrees by the end of the 21st century unless urgent action is taken.<sup>1</sup></p>  
               <p>Extreme poverty, conflict, the exploitation of natural resources and economic dependence on agriculture and pastoralism make the Sahel particularly susceptible to climate change. Rising temperatures can lead to increased conflict, displacement, and food shortages, making life difficult for already-vulnerable populations. In 2021, almost 29 million Sahelians are estimated to be in need of humanitarian assistance, 5 million more people than the previous year.<sup>2</sup></p>
             </div>
@@ -119,10 +120,10 @@
             <p>Follow the links below to add your voice to the global campaign for #TheHumanRace and get inspired by stories of how communities around the world are taking action to adapt to the climate crisis.</p>
             <div class='layout-inner double-layout'>
               <div>
-                <a href='https://www.worldhumanitarianday.org' target='_blank'><img src='assets/images/join-human-race.png' /></a>
+                <a href='https://www.worldhumanitarianday.org' target='_blank' class='linkTrack'><img src='assets/images/join-human-race.png' /></a>
               </div>
               <div>
-                <a href='https://unocha.exposure.co/humans-in-the-climate-crisis' target='_blank'><img src='assets/images/climate-crisis.png' /></a>
+                <a href='https://unocha.exposure.co/humans-in-the-climate-crisis' target='_blank' class='linkTrack'><img src='assets/images/climate-crisis.png' /></a>
               </div>
             </div>
           </div>
@@ -208,6 +209,7 @@
       for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
     </script>
     <!-- End Mixpanel -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>

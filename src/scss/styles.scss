@@ -257,22 +257,6 @@ footer {
 		margin: 0 auto;
 		width: 800px;
 	}
-	&[data-section="1"] {
-		height: 150vh;
-	}
-	&.conclusion {
-		color: #000;
-		min-height: 100vh;
-		padding-top: 10px;
-		> p {
-			margin: 0 auto;
-			padding: 10px 0;
-			width: 800px;
-		}
-		.double-layout div {
-			margin-top: 40px;
-		}
-	}
 	.box {
 		height: 100vh;
 		.box-inner {
@@ -300,6 +284,28 @@ footer {
 			font-weight: 600;
 			margin: 0 auto;
 			width: 434px;
+		}
+	}
+	&[data-section="1"] {
+		height: 150vh;
+	}
+	&[data-section="2"] {
+		height: 250vh;
+		.box {
+			height: 125vh;
+		}
+	}
+	&.conclusion {
+		color: #000;
+		min-height: 100vh;
+		padding-top: 10px;
+		> p {
+			margin: 0 auto;
+			padding: 10px 0;
+			width: 800px;
+		}
+		.double-layout div {
+			margin-top: 40px;
 		}
 	}
 }
