@@ -2040,7 +2040,7 @@ $( document ).ready(function() {
     $('.dataviz-container').find('.dataviz').hide();
     $('.dataviz-container').find('.dataviz-'+currentSection).show();
 
-    mpTrackInteraction('dataviz view', currentSection);
+    mpTrackInteraction('dataviz view', 'dataviz-'+currentSection);
   }
 
   function initTracking() {
