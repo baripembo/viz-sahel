@@ -227,12 +227,7 @@ footer {
 		top: 0;
 		width: 100%;
 		.item {
-	  	transition: opacity 1s ease;
-	  	&.item-7 {
-	  		div {
-	  			background-color: #EFE4CE;
-	  		}
-	  	}  	
+	  	transition: opacity 1s ease; 	
 			img,
 			div {
 				display: block;
