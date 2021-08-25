@@ -1300,8 +1300,6 @@ footer {
     width: 100%; }
     .story-container .pin-item .item {
       transition: opacity 1s ease; }
-      .story-container .pin-item .item.item-7 div {
-        background-color: #EFE4CE; }
       .story-container .pin-item .item img,
       .story-container .pin-item .item div {
         display: block;
