@@ -1873,7 +1873,7 @@ $( document ).ready(function() {
   function init() {
     //preload images
     preload([
-      'assets/images/1-main.jpeg',
+      'assets/images/main.jpg',
       'assets/images/home.jpg',
       'assets/images/river.jpg',
       'assets/images/farm.jpg',
