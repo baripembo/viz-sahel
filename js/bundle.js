@@ -55,6 +55,7 @@ $( document ).ready(function() {
 		},
 		options: {
     	responsive: true,
+    	maintainAspectRatio: false,
 			scales: {
         x: {
           grid: {
@@ -176,7 +177,8 @@ $( document ).ready(function() {
 				]
 			},
 			options: {
-	    	responsive: true,
+    		responsive: true,
+    		maintainAspectRatio: false,
 				scales: {
 	        x: {
 	          stacked: true,
