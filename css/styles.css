@@ -1403,7 +1403,7 @@ footer {
       padding: 50px 0; }
     .dataviz-container .dataviz.dataviz-4 iframe {
       height: 670px;
-      padding: 10px 0 0 10px; }
+      padding: 10px 0 0 0; }
     .dataviz-container .dataviz.dataviz-4 canvas {
       margin-top: 20px; }
     .dataviz-container .dataviz.dataviz-4 .single-layout {
