@@ -19,8 +19,7 @@ $( document ).ready(function() {
 					fill: false,
 					label: 'Drought Events',
 					pointBackgroundColor: '#FFF',
-          pointRadius: 4,
-          tension: 0,
+          tension: 0.2,
 					type: 'line',
       		yAxisID: 'y1'
 				},
@@ -32,8 +31,7 @@ $( document ).ready(function() {
 					fill: false,
 					label: 'Flood Events',
 					pointBackgroundColor: '#FFF',
-          pointRadius: 4,
-          tension: 0,
+          tension: 0.2,
 					type: 'line',
       		yAxisID: 'y1'
 				},

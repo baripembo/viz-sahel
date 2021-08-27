@@ -1401,6 +1401,10 @@ footer {
       width: 100%; }
     .dataviz-container .dataviz .layout-container {
       padding: 50px 0; }
+    .dataviz-container .dataviz .chart-container {
+      height: 350px;
+      position: relative;
+      width: 100%; }
     .dataviz-container .dataviz.dataviz-4 iframe {
       height: 670px;
       padding: 10px 0 0 0; }
