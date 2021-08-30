@@ -2038,9 +2038,10 @@ $( document ).ready(function() {
 
   function showDataviz() {
     $('.dataviz-container').find('.dataviz').hide();
-    $('.dataviz-container').find('.dataviz-'+currentSection).show();
+    var currentDataviz = '.dataviz-'+currentSection;
+    $('.dataviz-container').find(currentDataviz).show();
 
-    mpTrackInteraction('dataviz view', 'dataviz-'+currentSection);
+    mpTrackInteraction('dataviz view', $(currentDataviz).attr('id'));
   }
 
   function initTracking() {

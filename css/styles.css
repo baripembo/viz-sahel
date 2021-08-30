@@ -1350,15 +1350,15 @@ footer {
     height: 250vh; }
     .section[data-section="2"] .box {
       height: 125vh; }
-  .section.conclusion {
+  .section#conclusion {
     color: #000;
     min-height: 100vh;
     padding-top: 10px; }
-    .section.conclusion > p {
+    .section#conclusion > p {
       margin: 0 auto;
       padding: 10px 0;
       width: 800px; }
-    .section.conclusion .double-layout div {
+    .section#conclusion .double-layout div {
       margin-top: 40px; }
 
 .dial {
@@ -1489,7 +1489,7 @@ select {
         width: 100%; }
     .section .box .box-inner {
       width: 100%; }
-    .section.conclusion > p {
+    .section#conclusion > p {
       width: 100%; }
   .dial {
     width: 100%; }
