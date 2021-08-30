@@ -116,14 +116,14 @@ footer {
 			}
 		}
 	}
-	.footnote-sources {
-		font-size: 10px;
-		line-height: 10px;
-		margin: 0 auto;
-		width: 800px;
-		sup {
-			font-size: 8px;
-		}
+}
+.footnote-sources {
+	font-size: 10px;
+	line-height: 10px;
+	margin: 0 auto;
+	width: 800px;
+	sup {
+		font-size: 8px;
 	}
 }
 
@@ -230,9 +230,6 @@ footer {
 	  	transition: opacity 1s ease; 	
 			img,
 			div {
-				// display: block;
-				// object-fit: cover;
-				// position: absolute;
 				display: block;
 		    height: 100%;
 		    left: 50%;

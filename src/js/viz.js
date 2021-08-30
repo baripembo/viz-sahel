@@ -77,6 +77,16 @@ $( document ).ready(function() {
 
     $('.loader').hide();
     $('main').css('opacity', 1);
+
+    window.onscroll = function() {
+      if ($(document).scrollTop() == 0) {      
+        $('.dial').clearQueue();
+        $('.dial').animate({
+          bottom: -(dialWidth + 100),
+          opacity: 0,
+        }, 750, 'easeOutQuart');
+      }        
+    };
   }
 
   function initDial() {
