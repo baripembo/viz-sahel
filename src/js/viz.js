@@ -10,7 +10,7 @@ $( document ).ready(function() {
   function init() {
     //preload images
     preload([
-      'assets/images/1-main.jpeg',
+      'assets/images/main.jpg',
       'assets/images/home.jpg',
       'assets/images/river.jpg',
       'assets/images/farm.jpg',
@@ -175,9 +175,10 @@ $( document ).ready(function() {
 
   function showDataviz() {
     $('.dataviz-container').find('.dataviz').hide();
-    $('.dataviz-container').find('.dataviz-'+currentSection).show();
+    var currentDataviz = '.dataviz-'+currentSection;
+    $('.dataviz-container').find(currentDataviz).show();
 
-    mpTrackInteraction('dataviz view', currentSection);
+    mpTrackInteraction('dataviz view', $(currentDataviz).attr('id'));
   }
 
   function initTracking() {

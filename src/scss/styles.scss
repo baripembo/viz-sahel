@@ -104,8 +104,8 @@ footer {
 			width: 40%;
 		}
 		p {
-			font-size: 14px;
-			line-height: 22px;
+			font-size: 12px;
+			line-height: 20px;
 		}
 		.footer-logos {
 			align-items: center;
@@ -151,7 +151,7 @@ footer {
 
 .btn-story {
 	display: none;
-	left: 20px;
+	left: 15px;
 	position: fixed;
 	top: 20px;
   .arrow {
@@ -230,6 +230,9 @@ footer {
 	  	transition: opacity 1s ease; 	
 			img,
 			div {
+				// display: block;
+				// object-fit: cover;
+				// position: absolute;
 				display: block;
 		    height: 100%;
 		    left: 50%;
@@ -290,7 +293,7 @@ footer {
 			height: 125vh;
 		}
 	}
-	&.conclusion {
+	&#conclusion {
 		color: #000;
 		min-height: 100vh;
 		padding-top: 10px;
@@ -350,10 +353,15 @@ footer {
 		.layout-container {
 			padding: 50px 0;
 		}
+  	.chart-container {
+			height: 350px;
+			position: relative;
+			width: 100%;
+		}
 		&.dataviz-4 {
 			iframe {
 				height: 670px;
-				padding: 10px 0 0 10px;
+				padding: 10px 0 0 0;
 			}
 			canvas {
 				margin-top: 20px;
@@ -452,6 +460,9 @@ select {
 			width: 100%;
 		}
 	}
+	.btn-story {
+		background-color: rgba(255,255,255,0.5);
+	}
 	.section {
 		padding: 0 20px;
 		.section-inner {
@@ -468,7 +479,7 @@ select {
 				width: 100%;
 			}
 		}
-		&.conclusion {
+		&#conclusion {
 			> p {
 				width: 100%;
 			}
@@ -484,6 +495,11 @@ select {
     	p {
     		width: 100%;
     	}
+    	.chart-container {
+				height: 50vh;
+				position: relative;
+				width: 100%;
+			}
     }
 	}
 	.double-layout {

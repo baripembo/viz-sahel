@@ -41,7 +41,6 @@
             <img src='assets/images/home.jpg' />
           </div>
           <div class='item' data-item='2'>
-            <!-- <img src='assets/images/intro.jpg' /> -->
             <div id='map'></div>
           </div>
           <div class='item' data-item='1'>
@@ -68,7 +67,7 @@
             </div>
           </div>
         </section> 
-        <section class='section' data-section='3' id='home'>
+        <section class='section' data-section='3' id='step1'>
           <div class='box'>
             <div class='box-inner'>
               <p>Zara and her family were forced to relocate a few years ago after a severe drought in Chad’s Lac province. Since 2008, 800,000 people have been displaced in Chad due to climate related disasters. Many more are using migration as an adaptation strategy.</p>
@@ -79,7 +78,7 @@
             </div>
           </div>
         </section>
-        <section class='section' data-section='4' id='river'>
+        <section class='section' data-section='4' id='step2'>
           <div class='box'>
             <div class='box-inner'>
               <p>As she starts her journey for water, Zara passes a dried up river bed. In Chad, frequent droughts have resulted in dwindling supplies of water. Floods have also become more common since the 1990s as dry, sandy lands are unable to absorb rainfall.</p>
@@ -90,7 +89,7 @@
             </div>
           </div>
         </section>
-        <section class='section' data-section='5' id='farm'>
+        <section class='section' data-section='5' id='step3'>
           <div class='box'>
             <div class='box-inner'>
               <p>After walking 1 kilometer, Zara passes farmland that has been trampled by the cattle of pastoralists forced to migrate south before crops could be harvested. Changing weather patterns and decreased availability of resources have disrupted traditional migration routes for pastoralists. More frequent and intense extreme weather events also increase food insecurity and malnutrition by destroying land, livestock, crops and food supplies.</p>
@@ -101,7 +100,7 @@
             </div>
           </div>
         </section>
-        <section class='section' data-section='6' id='well'>
+        <section class='section' data-section='6' id='step4'>
           <div class='box'>
             <div class='box-inner'>
               <p>After walking for 1.5 hours through the difficult terrain, Zara reaches the borehole. She fills her container with 15 litres of water (weighing roughly 15kg) and prepares for the 5km journey back home. Zara is tired but has no time to rest as she needs to hurry back to avoid missing class.</p>
@@ -111,7 +110,7 @@
             </div>
           </div>
         </section>
-        <section class='section conclusion' data-section='7'>
+        <section class='section' data-section='7' id='conclusion'>
           <div class='section-inner'>
             <blockquote>“The climate emergency is a race we are losing, but it is a race we can win.”</blockquote>
             <figcaption>– United Nations Secretary-General António Guterres</figcaption>
@@ -156,8 +155,9 @@
       <div class='btn-story'>
         <div class='arrow'></div>Back to story
       </div>
-      <div class='dataviz dataviz-3'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class='dataviz dataviz-3' id='dataviz-step1'>
+        <p>Since 2008, 17.1 million people have been newly displaced in Burkina Faso, Cameroon, Chad, Mali, Niger and Nigeria. In all six countries, rapid-onset disasters such as floods and increasing violence have forced people to move, either temporarily or permanently.</p> 
+        <p>Heavy rains in 2012 triggered extensive flooding in Cameroon, Chad, Niger and Nigeria, displacing millions across the region. As climate change continues to exacerbate weather variability, these types of ‘once in a century’ weather events will become more frequent.</p>
         <div class='layout-container single-layout'>
           <div>
             <h3></h3>
@@ -165,26 +165,26 @@
           </div>
         </div>
       </div>
-      <div class='dataviz dataviz-4'>
-        <p>Climate-linked disasters have become more frequent and catastrophic in recent years and they are projected to get worse. In the 2010s, though there were fewer events compared to the 2000s, more people were affected, suggesting that the impacts of individual events have gotten worse.</p>
+      <div class='dataviz dataviz-4' id='dataviz-step2'>
+        <p>Climate-linked disasters have become more frequent and catastrophic in recent years and they are projected to get worse. In the 2010s, though there were fewer events, more people were affected, suggesting that the impacts of individual events have gotten worse.</p>
         <div class='layout-container'>
-          <div>
+          <div class='chart-container'>
             <h3>Droughts and floods in the Sahel since the 1960s</h3>
             <canvas id="droughtsFloodsByDecade"></canvas>
           </div>
         </div>
-        <p>Since 2008, over 60 million people have been affected by droughts, floods and storms in the Sahel. Some countries are mainly experiencing droughts or floods, while others are dealing with both.</p>
+        <p>Since 2008, over 60 million people have been affected by droughts, floods and storms in the Sahel.</p>
         <div class='layout-container'>
           <h3>The number of people affected by droughts and floods since 2014</h3>
           <iframe src='https://ocha-dap.github.io/droughts_floods/' width='900' height='650'></iframe>
           <p class='source'><b>Data source:</b> <a href='https://data.humdata.org/dataset/emdat-country-profiles' target='_blank'>CRED EM-DAT database</a></p>
         </div>
       </div>
-      <div class='dataviz dataviz-5'>
-        <p>Rapid-onset disasters (i.e. floods) and long-term climate change effects (i.e. desertification) may force people to temporarily or permanently move. Though migration is an important adaptation strategy, it can lead to loss of livelihoods, poverty, conflicts between host and migrant communities, and many more problems.</p> 
-        <p>Since 2008, the number of new IDPs in the six countries due to either conflict or disaster is 17.1 million.  Out of the total new displacements, 9.2 million is due to disasters, most of which are climate induced.</p>
+      <div class='dataviz dataviz-5' id='dataviz-step3'>
+        <p>Climate shocks and high food prices have deepened people’s vulnerability and challenged their access to food across the Sahel in recent years. The Intergovernmental Panel on Climate Change (IPCC) predicts that agricultural yields will fall by 20% per decade by the end of the 21st century in some parts of the Sahel. These declines in crop productivity are linked to rising temperatures and changes in precipitations.</p>
+        <p>In 2020, over 47 million people in the six Sahelien countries are experiencing phase 2 (stressed) food insecurity and nearly 20 million people are experiencing phase 3+ (crisis / emergency) food insecurity. These numbers are projected to increase if no mitigating action is taken.</p>
         <div class='layout-container single-layout'>
-          <div>
+          <div class='chart-container'>
             <h3>Population in IPC 3+</h3>
             <label for='ipcSelect' class='visuallyhidden'>Select an exercise period:</label>
             <select id='ipcSelect' class='ipc-select'></select>
@@ -193,8 +193,9 @@
           </div>
         </div>
       </div>
-      <div class='dataviz dataviz-6'>
-        <p>The six Sahelien countries being explored (Burkina Faso, Cameroon, Chad, Mali, Niger and Nigeria) are among the most climate vulnerable countries in the world, though their contributions to climate change are among the lowest (with Nigeria being higher than the others). In addition to experiencing the most extreme effects of climate change, these countries are also the least prepared to deal with its grave and worsening consequences.</p>
+      <div class='dataviz dataviz-6' id='dataviz-step4'>
+        <p>More frequent climate shocks can exacerbate existing vulnerabilities and create conditions in which any small shock can lead to humanitarian emergencies. To make matters worse, the six Sahelien countries being explored here are among the most climate vulnerable countries in the world, though their contributions to climate change are among the lowest.</p>
+        <p>In addition to experiencing some of the worst effects of climate change, these countries are also the least prepared to deal with its grave and worsening consequences.</p>
         <div class='layout-container'>
           <h3>Climate change vulnerability & readiness and CO2 emissions by country:</h3>
           <iframe src='https://ocha-dap.github.io/climate_change/'></iframe>
