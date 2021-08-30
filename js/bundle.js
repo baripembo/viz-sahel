@@ -2013,6 +2013,7 @@ $( document ).ready(function() {
   }
 
   function setDial(step, direction) {
+    $('.dial').clearQueue();
     if (step>2 && step<7) {
       if (step==3 || (step==6 && direction=='leave')) {
         $('.dial').animate({
@@ -2024,7 +2025,6 @@ $( document ).ready(function() {
       rotateDial(rotations[step]);
     }
     else {
-      $('.dial').clearQueue();
       $('.dial').animate({
         bottom: -(dialWidth + 100),
         opacity: 0,
