@@ -127,7 +127,7 @@ $( document ).ready(function() {
     })
     .on('enter', function(e) {
       var location = {
-        center: [15.4723, 12],
+        center: [18.5, 13],
         zoom: 6,
         pitch: 100,
         bearing: 0
@@ -136,7 +136,7 @@ $( document ).ready(function() {
     })
     .on('leave', function(e) {
       var location = {
-        center: [15.4723, 12],
+        center: [18.5, 13],
         zoom: 3.5,
         pitch: 0,
         bearing: 0
