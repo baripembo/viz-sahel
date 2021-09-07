@@ -1872,13 +1872,13 @@ $( document ).ready(function() {
 
   function init() {
     //preload images
-    preload([
-      'assets/images/main.jpg',
-      'assets/images/home.jpg',
-      'assets/images/river.jpg',
-      'assets/images/farm.jpg',
-      'assets/images/water.jpg'
-    ]);
+    // preload([
+    //   'assets/images/main.jpg',
+    //   'assets/images/home.jpg',
+    //   'assets/images/river.jpg',
+    //   'assets/images/farm.jpg',
+    //   'assets/images/water.jpg'
+    // ]);
 
     //btn to dataviz
     $('.btn-dataviz').on('click', function() {
@@ -1918,6 +1918,8 @@ $( document ).ready(function() {
       zoom: 3.5,
       attributionControl: false
     });
+
+    loadComplete();
   }
 
   function preload(imgArray) {
