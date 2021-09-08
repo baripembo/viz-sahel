@@ -1,5 +1,6 @@
 $( document ).ready(function() {
-  let viewportWidth = $(window).width()
+  let viewportWidth = $(window).width();
+  let viewportHeight = $(window).height();
   let currentSection = 1;
   let dialHeight, dialWidth;
   let map;
@@ -9,13 +10,13 @@ $( document ).ready(function() {
 
   function init() {
     //preload images
-    preload([
-      'assets/images/main.jpg',
-      'assets/images/home.jpg',
-      'assets/images/river.jpg',
-      'assets/images/farm.jpg',
-      'assets/images/water.jpg'
-    ]);
+    // preload([
+    //   'assets/images/main.jpg',
+    //   'assets/images/home.jpg',
+    //   'assets/images/river.jpg',
+    //   'assets/images/farm.jpg',
+    //   'assets/images/water.jpg'
+    // ]);
 
     //btn to dataviz
     $('.btn-dataviz').on('click', function() {
@@ -55,6 +56,11 @@ $( document ).ready(function() {
       zoom: 3.5,
       attributionControl: false
     });
+
+    //workaround for mobile vh issue
+    if (viewportWidth<768) $('.pin-item').css('height',(viewportHeight+115)+'px');
+
+    loadComplete();
   }
 
   function preload(imgArray) {
@@ -127,7 +133,7 @@ $( document ).ready(function() {
     })
     .on('enter', function(e) {
       var location = {
-        center: [18.5, 13],
+        center: [18.67, 13],
         zoom: 6,
         pitch: 100,
         bearing: 0
@@ -136,7 +142,7 @@ $( document ).ready(function() {
     })
     .on('leave', function(e) {
       var location = {
-        center: [18.5, 13],
+        center: [18.67, 13],
         zoom: 3.5,
         pitch: 0,
         bearing: 0

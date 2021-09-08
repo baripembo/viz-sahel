@@ -222,6 +222,7 @@ footer {
 	margin: 0 auto;
 	.pin-item {
 		height: 100vh;
+		height: -webkit-fill-available;
 		margin: 0;
 		position: fixed;
 		top: 0;
