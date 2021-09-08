@@ -1919,14 +1919,10 @@ $( document ).ready(function() {
       attributionControl: false
     });
 
-    let vh = window.innerHeight * 0.01;
-    console.log('vh=',vh)
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // let vh = window.innerHeight * 0.01;
+    // console.log('vh=',vh)
+    // document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    window.addEventListener('resize', () => {
-
-      //document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
 
 
     loadComplete();
