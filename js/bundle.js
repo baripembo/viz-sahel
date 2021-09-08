@@ -1921,7 +1921,7 @@ $( document ).ready(function() {
 
     let vh = $(window).height();
     console.log('window height', vh);
-    $('.pin-item').css('height',vh+'px');
+    $('.pin-item').css('height',(vh+115)+'px');
     // let vh = window.innerHeight * 0.01;
     // console.log('vh=',vh)
     // document.documentElement.style.setProperty('--vh', `${vh}px`);
