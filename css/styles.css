@@ -1187,6 +1187,9 @@ footer {
   margin-top: 40px;
   padding: 10px 0 10px;
   width: 100%; }
+  footer p {
+    font-size: 12px;
+    line-height: 20px; }
   footer .inner {
     display: flex;
     flex-flow: row;
@@ -1198,15 +1201,15 @@ footer {
       padding-top: 15px;
       text-align: right;
       width: 40%; }
-    footer .inner p {
-      font-size: 12px;
-      line-height: 20px; }
     footer .inner .footer-logos {
       align-items: center;
       display: flex;
       margin: 30px 0 20px; }
       footer .inner .footer-logos img {
         margin-left: 30px; }
+  footer .inner-full {
+    margin: 0 auto;
+    width: 800px; }
 
 .footnote-sources {
   font-size: 10px;
@@ -1250,6 +1253,24 @@ footer {
 .btn-dataviz {
   margin: 10px 15px;
   text-align: right; }
+
+.btn-donate {
+  background-color: #357BC6;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  padding: 9px 26px;
+  text-decoration: none; }
+  .btn-donate:hover {
+    background-color: #006ABF;
+    color: #FFF; }
+
+.center-align {
+  text-align: center; }
 
 .scroll-arrow {
   animation: arrowAnim 5s ease-in-out infinite;
@@ -1394,6 +1415,7 @@ footer {
       padding: 20px 0;
       width: 800px; }
       .dataviz-container .dataviz p.source {
+        font-size: 12px;
         padding: 5px 0 36px;
         width: 100%; }
     .dataviz-container .dataviz iframe {
