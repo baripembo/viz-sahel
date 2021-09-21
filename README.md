@@ -1,4 +1,4 @@
-# Climate Change in the Sahel Data story
+# Climate Crisis in the Sahel Data story
 
 ### Set up
 * Check out the repository
