@@ -5,7 +5,7 @@ $( document ).ready(function() {
   let dialHeight, dialWidth;
   let map;
   const rotations = [0, 0, 0, 45, 15, -15, -45];
-  const credits = ['©UNICEF/UNI82205/Holt','','©UNICEF Chad/2016/Bahaji','Photo credit','©UNICEF Chad/2016/Bahaji'];
+  const credits = ['©UNICEF/UNI82205/Holt','','©UNICEF Chad/2016/Bahaji','©OCHA/Pierre Peron','©UNICEF Chad/2016/Bahaji'];
 
 
   function init() {
@@ -63,19 +63,19 @@ $( document ).ready(function() {
     loadComplete();
   }
 
-  function preload(imgArray) {
-    var loadedCount = 0
-    $(imgArray).each(function(){
-      var img = new Image();
-      img.src = this;
-      img.onload = function() {
-        loadedCount++;
-        if (loadedCount==imgArray.length) {
-          loadComplete();
-        }
-      }
-    });
-  }
+  // function preload(imgArray) {
+  //   var loadedCount = 0
+  //   $(imgArray).each(function(){
+  //     var img = new Image();
+  //     img.src = this;
+  //     img.onload = function() {
+  //       loadedCount++;
+  //       if (loadedCount==imgArray.length) {
+  //         loadComplete();
+  //       }
+  //     }
+  //   });
+  // }
 
   function loadComplete() {
     initDial();

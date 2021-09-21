@@ -90,6 +90,10 @@ footer {
 	margin-top: 40px;
 	padding: 10px 0 10px;
 	width: 100%;
+	p {
+		font-size: 12px;
+		line-height: 20px;
+	}
 	.inner {
 		display: flex;
 		flex-flow: row;
@@ -103,10 +107,6 @@ footer {
 			text-align: right;
 			width: 40%;
 		}
-		p {
-			font-size: 12px;
-			line-height: 20px;
-		}
 		.footer-logos {
 			align-items: center;
 			display: flex;
@@ -115,6 +115,10 @@ footer {
 				margin-left: 30px;
 			}
 		}
+	}
+	.inner-full {
+		margin: 0 auto;
+		width: 800px;
 	}
 }
 .footnote-sources {
@@ -164,6 +168,27 @@ footer {
 .btn-dataviz {
   margin: 10px 15px;
 	text-align: right;
+}
+
+.btn-donate {
+	background-color: #357BC6;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  padding: 9px 26px;
+  text-decoration: none;
+  &:hover {
+		background-color: #006ABF;
+  	color: #FFF;
+  }
+}
+
+.center-align {
+	text-align: center;
 }
 
 .scroll-arrow {
@@ -338,6 +363,7 @@ footer {
 			padding: 20px 0;
 			width: 800px;
 			&.source {
+				font-size: 12px;
 				padding: 5px 0 36px;
 				width: 100%;
 			}
