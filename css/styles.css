@@ -1498,6 +1498,8 @@ select {
         height: auto;
         margin-left: 0;
         width: 125px; }
+  footer .inner-full {
+    width: 100%; }
   footer .footnote-sources {
     padding: 0;
     width: 100%; }
