@@ -1,4 +1,4 @@
-# Viz Starter
+# Climate Crisis in the Sahel Data story
 
 ### Set up
 * Check out the repository

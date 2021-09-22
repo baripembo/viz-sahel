@@ -462,7 +462,7 @@ select {
 	footer {
 		.inner {
 			flex-flow: column;
-    	padding: 0;
+    		padding: 0;
 			width: 100%;
 			.left,
 			.right {
@@ -479,8 +479,11 @@ select {
 				}
 			}
 		}
+		.inner-full {
+			width: 100%;
+		}
 		.footnote-sources {
-    	padding: 0;
+    		padding: 0;
 			width: 100%;
 		}
 	}

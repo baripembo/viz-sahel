@@ -1,8 +1,8 @@
 {
-  "name": "viz-sahel",
+  "name": "viz-climate-crisis-sahel",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/baripembo/viz-sahel.git",
+  "homepage": "https://github.com/OCHA-DAP/viz-climate-crisis-sahel.git",
   "main": " ",
   "scripts": {
     "start": "http-server ./dist -c-1 -p 3000",
