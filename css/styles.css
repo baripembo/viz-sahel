@@ -1269,6 +1269,17 @@ footer {
     background-color: #006ABF;
     color: #FFF; }
 
+.btn-translate {
+  opacity: 0.75;
+  padding: 5px; }
+  .btn-translate a,
+  .btn-translate a:visited {
+    color: #FFF;
+    text-decoration: none; }
+    .btn-translate a:hover,
+    .btn-translate a:visited:hover {
+      text-decoration: underline; }
+
 .center-align {
   text-align: center; }
 
