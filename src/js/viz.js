@@ -62,12 +62,6 @@ $( document ).ready(function() {
       mpTrackLink(url);
     });
 
-    //translate 
-    $('.btn-translate a').on('click', function(e) {
-      console.log(e.target.id)
-      const language = e.target.id;
-    });
-
     loadComplete();
   }
 
