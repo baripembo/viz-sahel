@@ -1872,14 +1872,31 @@ $( document ).ready(function() {
 
 
   function init() {
-    //preload images
-    // preload([
-    //   'assets/images/main.jpg',
-    //   'assets/images/home.jpg',
-    //   'assets/images/river.jpg',
-    //   'assets/images/farm.jpg',
-    //   'assets/images/water.jpg'
-    // ]);
+    //init mapbox
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaHVtZGF0YSIsImEiOiJja2FvMW1wbDIwMzE2MnFwMW9teHQxOXhpIn0.Uri8IURftz3Jv5It51ISAA';
+    map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/humdata/ckfx2jgjd10qx1bnzkla9px41/',
+      center: [15.4723, 12],
+      minZoom: 2,
+      zoom: 3.5,
+      attributionControl: false
+    });
+
+    map.on('load', function() {
+      const filename = window.location.pathname.substring(
+        window.location.pathname.lastIndexOf('/') + 1
+      );
+      if (filename.indexOf('-fr')>-1) {
+        map.setLayoutProperty('country-label', 'text-field', [
+          'get',
+          'name_fr'
+        ]);
+      }
+    });
+
+    //workaround for mobile vh issue
+    if (viewportWidth<768) $('.pin-item').css('height',(viewportHeight+115)+'px');
 
     //btn to dataviz
     $('.btn-dataviz').on('click', function() {
@@ -1905,23 +1922,8 @@ $( document ).ready(function() {
     //track links
     $('.linkTrack').on('click', function() {
       let url = $(this).attr('href');
-      console.log(url)
       mpTrackLink(url);
     });
-
-    //init mapbox
-    mapboxgl.accessToken = 'pk.eyJ1IjoiaHVtZGF0YSIsImEiOiJja2FvMW1wbDIwMzE2MnFwMW9teHQxOXhpIn0.Uri8IURftz3Jv5It51ISAA';
-    map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/humdata/ckfx2jgjd10qx1bnzkla9px41/',
-      center: [15.4723, 12],
-      minZoom: 2,
-      zoom: 3.5,
-      attributionControl: false
-    });
-
-    //workaround for mobile vh issue
-    if (viewportWidth<768) $('.pin-item').css('height',(viewportHeight+115)+'px');
 
     loadComplete();
   }
